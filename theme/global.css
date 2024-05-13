@@ -23,8 +23,7 @@ dialog {
   width: 100%;
   height: 100%;
 
-  border: 1px solid var(--theme-popup-border);
-  border-radius: 8px;
+  border: none;
 
   display: flex;
   flex-direction: column;
@@ -34,6 +33,10 @@ dialog {
 
 #content-alert .title {
   font-size: 1.5em;
+}
+
+#content-alert .warning {
+  max-width: 600px;
 }
 
 #content-alert .warning::before {
