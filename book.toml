@@ -14,7 +14,7 @@ preferred-dark-theme = "coal"
 copy-fonts = false
 additional-css = ["theme/pagetoc.css", "theme/global.css"]
 additional-js = ["theme/pagetoc.js"]
-git-repository-url = "https://github.com/diamondburned/book"
+git-repository-url = "https://github.com/diamondburned/docs"
 git-repository-icon = "fa-github"
 
 [output.html.fold]
