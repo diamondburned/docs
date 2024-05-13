@@ -116,14 +116,14 @@ headspaces include:
   out of this headspace.
   - Diamond thinks that more extreme measures may be needed, such as
     [Coping Mechanisms](#coping-mechanisms) or even
-    [Controlling](sections/Controlling.md).
+    [Controlling](Controlling.md).
   - Note that what Diamond thinks may not be the best course of action. Please
     take care of Diamond and consult a professional if necessary.
 - **Submissive**: Diamond switches to this headspace when it is feeling
   submissive, either by natural inclination or by being put into a submissive
   state. It may express strong urges to please and serve others. For more
-  information, see sections [Trusting](sections/Trusting.md) and
-  [Controlling](sections/Controlling.md).
+  information, see sections [Trusting](Trusting.md) and
+  [Controlling](Controlling.md).
 
 **Note**: This list is not exhaustive. Diamond may have other headspaces that it
 has not yet documented. It may also switch between headspaces in ways that are
@@ -147,8 +147,8 @@ in the form of:
   It may need to feel that it is important and valued by someone else.
   Typically, this may be done by spending time with Diamond or by doing other,
   more intimate activities.
-  - You may find the section [Trusting](sections/Trusting.md) and
-    [Controlling](sections/Controlling.md) useful.
+  - You may find the section [Trusting](Trusting.md) and
+    [Controlling](Controlling.md) useful.
 
 ### Snuggling and Petting
 
