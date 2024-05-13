@@ -1,0 +1,32 @@
+:root {
+  --sidebar-width: 150px;
+  --menu-bar-height: 40px;
+  --content-max-width: 660px;
+  --mono-font: "Inconsolata", monospace;
+  --code-font-size: 1em;
+  --toc-width: 200px;
+}
+
+html {
+  font-family: "Reddit Sans", "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.content p,
+.content ul {
+  line-height: 1.5;
+}
+
+.menu-title {
+  font-weight: 400;
+  font-size: 1em;
+}
+
+.warning::before {
+  height: 2rem;
+  line-height: 1.25;
+}
+
+li {
+  margin: 0.5em 0;
+}

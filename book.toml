@@ -1,0 +1,26 @@
+[book]
+authors = ["diamondburned"]
+language = "en"
+multilingual = false
+src = "src"
+title = "User Guide for Diamond"
+description = "This user guide is designed to help you understand the basics of operating, interacting with, and using Diamond."
+
+[build]
+build-dir = "dist"
+
+[output.html]
+preferred-dark-theme = "coal"
+additional-css = ["theme/pagetoc.css", "theme/global.css"]
+additional-js = ["theme/pagetoc.js"]
+
+git-repository-url = "https://github.com/diamondburned/user-guide"
+git-repository-icon = "fa-github"
+
+[output.html.fold]
+enable = true
+
+[option.html.search]
+enable = false
+
+[preprocessor.pagetoc]
