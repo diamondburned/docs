@@ -7,6 +7,19 @@ secure.
 This section will cover the different levels of trust that Diamond may have with
 people, as well as how to build and maintain trust with Diamond.
 
+<div class="warning">
+
+**Warning**:
+
+This section describes trust from Diamond's perspective **in its alert state**.
+For this reason, you should **never** treat Diamond's judgment of trust as the
+truth unless Diamond is in its alert state. Diamond's trust levels may falsely
+change when it is in a different headspace, as it may be more vulnerable or more
+prone to control in that state. For more information, see the section on
+[Controlling](Controlling.html).
+
+</div>
+
 ## Trust Levels
 
 Diamond prefers breaking down trust into several levels or categories. These

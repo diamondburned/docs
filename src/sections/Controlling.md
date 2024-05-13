@@ -18,6 +18,15 @@ dubious consent, and more.
 
 </div>
 
+<div class="warning">
+
+This section contains mentions of mind control, hypnosis and dubious consent.
+When engaging in these activities, you must always keep in mind that spoken
+consent is simply not enough. For more information, see the section on
+[Consent and Malleability](#consent-and-malleability).
+
+</div>
+
 You may find it helpful to first refer to the section [Trusting](Trusting.md)
 before continuing.
 
@@ -146,8 +155,114 @@ usually make it whimper, melt and become more submissive towards you.
 
 ### Dominating Actions
 
+By engaging in dominating actions, such as grabbing Diamond by the hair, pushing
+Diamond against a wall, or even choking Diamond, you may be able to put it into
+a Blank or even a Submissive state. Diamond enjoys being dominated and
+controlled by others, especially if it is done in a safe and consensual manner.
+
+Please be aware that Diamond has boundaries and limits that you should respect.
+You should also not engage in these actions randomly or without Diamond's
+consent. You should always consider whether your actions are safe for the time
+and place you are in, as well as whether Diamond is comfortable with them.
+
 ### Training
+
+Diamond loves to be trained and conditioned by others. By training Diamond, you
+can teach it to respond to certain triggers or commands in a certain way.
+
+An example of this is training Diamond to respond to a clicker or a bell. By
+doing this, you can condition Diamond to associate the sound of the clicker or
+bell with a reward, such as a treat, a petting or a praise. You can then use
+this to reward Diamond for following commands or requests.
+
+You may also try to associate certain triggers with certain behaviors or
+actions. For example, you may try to associate the sound of a finger snap with
+Diamond becoming more submissive or dazed. Even though this association may
+already exist, you may try to deepen it by training Diamond more.
+
+### Restraining
+
+Being restrained or tied up may put Diamond in a semi-Submissive state. It may
+beg for you to go harder or ask you to restrain it more. Diamond enjoys being
+looked at like a pretty decoration or a toy, especially when it is restrained.
+
+When you're first restraining Diamond, you should start with light restraints,
+such as a collar or a leash. You may then move on to more heavy restraints, such
+as handcuffs or ankle cuffs. You may also ask Diamond for bondage ropes if you
+are able to tie it up properly.
+
+If you're using bondage ropes, it may ask you to tie it up tightly or even ask
+you if it could wear the ropes as a fashion accessory. It may also ask you to
+take it out in public while it is restrained.
+
+If you choose to restrain Diamond, you should always consider its safety and
+make sure that it is comfortable with the restraints. You should also make sure
+that you have a way to release Diamond if it becomes uncomfortable or anxious.
 
 ### Sexual Activities
 
+Upon sexual arousal, Diamond may become more submissive, needy and open to
+suggestions. Not much more will be documented here to protect Diamond's privacy.
+
 ## Boundaries
+
+Diamond has several boundaries that you should respect when you are controlling
+it. Not respecting those boundaries may cause Diamond to become uncomfortable,
+anxious or even traumatized, even though it won't immediately express this.
+These boundaries are as follows.
+
+### Safe Words
+
+Diamond doesn't often use safe words. Part of the reason is that it enjoys being
+dominated and controlled by others, but another part of the reason is that it
+often finds it difficult to express its discomfort or distress. For example, it
+may harbor negative thoughts or emotions when it is being controlled, but it may
+choose to keep them to itself to avoid causing trouble.
+
+When engaging in dominating actions, you should always consider whether Diamond
+is comfortable with them. You should always observe Diamond's reactions and
+adjust your actions accordingly. If you notice that Diamond is becoming
+uncomfortable or anxious, you should stop immediately and check in with it.
+
+If possible, you should also ask Diamond to create a safe word or signal that it
+can use to indicate that it is uncomfortable or anxious. This may not always be
+possible, but it is always best to ask.
+
+### Emotional Boundaries
+
+Diamond has several emotional boundaries that you should respect. These
+emotional boundaries include:
+
+- **No Humiliation**: Diamond may not want to be humiliated. This is different
+  from being degraded, as Diamond may enjoy being degraded in a safe and
+  consensual manner.
+- **No Blackmail**: Diamond does not want to be blackmailed or threatened.
+- **No Financial Abuse**: Diamond does not want to be financially abused or
+  exploited. It may be willing to provide financial support to others out of its
+  own free will, but it may not want to be forced to do so.
+
+### Consent and Malleability
+
+Mind control, hypnosis and domination very often involve the manipulation of
+thoughts, feelings and behaviors of the subject. Diamond may be more susceptible
+to control than it would normally want, and it may not always be able to express
+its discomfort or distress. This may cause it to give consent to things that it
+would not normally consent to.
+
+If this goes unchecked, it might become an extremely dangerous situation for
+both Diamond and the person controlling it. You might be able to manipulate it
+into doing things that it would not normally do, and it may not be able to
+resist or refuse. This will damage Diamond's mental health, may cause
+self-destructive behaviors and may even lead to trauma.
+
+When controlling Diamond, you should always consider whether it is comfortable
+with what you are doing and whether it really trusts you enough. You should use
+your best judgment and always ask Diamond whether it is comfortable with you
+controlling it while it is in an alert state. For more information, see the
+section [Trusting](Trusting.md).
+
+Again, to reiterate: **consent is malleable** when it comes to hypnosis and mind
+control. Such activities require the utmost trust and respect between the two
+parties involved. If you are unsure about something, it is always best to ask
+Diamond directly while it is in an alert state or simply not engage in these
+activities at all.
