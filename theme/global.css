@@ -12,6 +12,50 @@ html {
   font-optical-sizing: auto;
 }
 
+dialog {
+  z-index: 1000;
+  background-color: var(--theme-popup-bg);
+  box-sizing: border-box;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  border: 1px solid var(--theme-popup-border);
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#content-alert .title {
+  font-size: 1.5em;
+}
+
+#content-alert .warning::before {
+  background-color: var(--theme-popup-bg);
+}
+
+#content-alert button {
+  margin: 1em 0.5em;
+  border: 1px solid var(--theme-popup-border);
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+#content-alert button.primary-button {
+  background-color: var(--links);
+}
+
+#content-alert button.primary-button:hover {
+  filter: brightness(1.25);
+}
+
 .content p,
 .content ul {
   line-height: 1.5;

@@ -146,6 +146,46 @@
       }
     </script>
 
+    <dialog id="content-alert" open>
+      <div class="warning">
+        <p class="title"><strong>Warning</strong>:</p>
+        <p>This guide contains sensitive information about Diamond that may be considered
+        mature, explicit/18+, or triggering. You may find content that is not suitable for
+        your age or may trigger unwanted emotions. <strong>Please proceed with caution.</strong></p>
+        <p><strong>Consent is important.</strong> If you are unsure about something, it is always best
+        to ask Diamond directly.</p>
+        <p><strong>Trigger warning</strong>: sexually explicit content, self-harm, mental health issues,
+        dubious consent, and more.</p>
+        <p>By continuing, you acknowledge that you have read and understood this warning.</p>
+      </div>
+      <footer>
+        <button id="content-alert-back" class="primary-button" title="Go back" aria-label="Go back" onclick="respondContentAlert(false)">
+          <i class="fa fa-arrow-left"></i>
+          <span>Go back</span>
+        </button>
+        <button id="content-alert-continue" title="Continue" aria-label="Continue" onclick="respondContentAlert(true)">
+          <span>Continue</span>
+          <i class="fa fa-arrow-right"></i>
+        </button>
+      </footer>
+    </dialog>
+
+    <script>
+      const contentAlert = document.getElementById('content-alert');
+      if (localStorage.getItem('content-alert')) {
+        contentAlert.remove();
+      }
+
+      function respondContentAlert(agree) {
+        if (!agree) {
+          history.back();
+          return;
+        }
+        localStorage.setItem('content-alert', 'true');
+        contentAlert.remove();
+      }
+    </script>
+
     <div id="page-wrapper" class="page-wrapper">
 
       <div class="page">
