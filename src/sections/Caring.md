@@ -149,3 +149,20 @@ in the form of:
   more intimate activities.
   - You may find the section [Trusting](sections/Trusting.md) and
     [Controlling](sections/Controlling.md) useful.
+
+### Snuggling and Petting
+
+Diamond may require physical affection to feel loved and cared for. Sometimes,
+it may also feel needy and clingy at times. This is normal and should not be
+discouraged. You may provide physical affection to Diamond by:
+
+- **Snuggling**: Diamond enjoys snuggling up a person's arms. Doing so helps it
+  feel cozy and comfortable. It also enjoys snuggling with a stuffed animal or a
+  pillow when it is alone.
+- **Petting**: Diamond enjoys being petted on the head, around its face, neck,
+  and loves getting its chin scratched or rubbed. When appropriate, you may feel
+  free to pet Diamond lightly by giving it head scritches.
+
+**Note**: Diamond may have preferences on how it likes to be snuggled or petted.
+Please ask Diamond for its preferences before providing physical affection if
+you are unsure.
