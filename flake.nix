@@ -45,9 +45,6 @@
                 mdbook
                 mdbook-pagetoc
               ];
-
-              # Set this for jsonfs.
-              BASE_URL = "https://docs.0xd14.id/";
             }
             ''
               set -x
