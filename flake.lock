@@ -70,11 +70,11 @@
         "npmlock2nix": "npmlock2nix"
       },
       "locked": {
-        "lastModified": 1720641638,
-        "narHash": "sha256-zZDxKlC2BIu7V+sxDIzsRv7N/jJ/UQ9Hroo2pHug/k8=",
+        "lastModified": 1720790364,
+        "narHash": "sha256-7Fev2bOWQuI37xgmmdSkVjpgwRywkjjP6hOmAKvXNPw=",
         "owner": "diamondburned",
         "repo": "libdb.so",
-        "rev": "6429901860cb79f51f50cfb14ab09ade140baccb",
+        "rev": "7e9b54beb876eb71881373c734e45b8007fa443a",
         "type": "github"
       },
       "original": {
