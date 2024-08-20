@@ -47,6 +47,9 @@ reference:
 
 ### Proper Pronoun Usage
 
+Diamond chooses to go by **it/its** pronouns most of the time and **she/her**
+sometimes. This section will explain when and how to use which pronouns.
+
 #### it/its
 
 Most of the time, Diamond prefers to be referred to with **it/its** pronouns.
