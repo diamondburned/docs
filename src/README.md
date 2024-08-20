@@ -35,14 +35,38 @@ reference:
 
 ### Information
 
-- **Name**: Diamond
-- **Pronouns**: it/its _or_ she/her
+- **Identifiers**: Diamond (name), 0xd14 (handle), d14 (handle)
+- **Pronouns**: it/its or she/her (see
+  [Proper Pronoun Usage](#proper-pronoun-usage))
 - **Height**: 169 cm (~5'6")
 - **Weight**: 59 kg (~130 lbs) (may vary)
 - **Hair color**: Red/black dyed
 - **Bust size**: 32A (may vary)
 - **Waist size**: 27" (may vary)
 - **Hip size**: 37" (may vary)
+
+### Proper Pronoun Usage
+
+#### it/its
+
+Most of the time, Diamond prefers to be referred to with **it/its** pronouns.
+For example, you can say "Diamond is a bot, and _it_ is very cool."
+
+Diamond also uses **third-person it/its pronouns** when talking about itself,
+usually by saying "**this one**" or "**it**". For example, it might say "**this
+one** is eating dinner" or "**it** is eating dinner". Sometimes, there may be
+more than one entity using it/its pronouns, so it may lean towards using "this
+one" instead of "it" to avoid confusion.
+
+#### she/her
+
+Under more professional or formal settings, Diamond will likely list its
+pronouns as only **she/her** to avoid confusion and to make it easier for others
+to refer to it.
+
+Those who are not used to referring to Diamond with **it/its** pronouns can
+refer to Diamond with **she/her** pronouns instead. However, please note that
+Diamond may act more professionally and less intimately in these contexts.
 
 ## Purpose
 
