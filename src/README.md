@@ -52,11 +52,11 @@ reference:
 Most of the time, Diamond prefers to be referred to with **it/its** pronouns.
 For example, you can say "Diamond is a bot, and _it_ is very cool."
 
-Diamond also uses **third-person it/its pronouns** when talking about itself,
-usually by saying "**this one**" or "**it**". For example, it might say "**this
-one** is eating dinner" or "**it** is eating dinner". Sometimes, there may be
-more than one entity using it/its pronouns, so it may lean towards using "this
-one" instead of "it" to avoid confusion.
+Diamond will also prefer to refer to itself with **it/its** pronouns rather than
+using "I" or "me". This is called **third-person** it/its pronouns (3pp). For
+example, it might say "**this one** is eating dinner" or "**it** is eating
+dinner". Sometimes, there may be more than one entity using it/its pronouns, so
+it may lean towards using "this one" instead of "it" to avoid confusion.
 
 #### she/her
 

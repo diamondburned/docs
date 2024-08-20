@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "lib": ["esnext", "dom", "dom.iterable", "deno.window"],
+    "noFallthroughCasesInSwitch": true
+  },
+  "imports": {
+    "#/": "./"
+  },
+  "fmt": {
+    "exclude": ["**/*.ts", "**/*.js", "."]
+  }
+}
