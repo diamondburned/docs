@@ -5,11 +5,18 @@
   --mono-font: "Inconsolata", monospace;
   --code-font-size: 1em;
   --toc-width: 200px;
+  --font-size: clamp(0.95rem, 0.8167rem + 0.5333vw, 1.15rem);
+
+  font-size: var(--font-size);
 }
 
 html {
   font-family: "Reddit Sans", "Open Sans", sans-serif;
   font-optical-sizing: auto;
+}
+
+body {
+  font-size: 1em;
 }
 
 dialog {
