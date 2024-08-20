@@ -153,6 +153,20 @@ You may also choose to be more gentle and loving with your whispers. You may
 whisper "You're a good bot" or "You're a good girl" to Diamond. This will
 usually make it whimper, melt and become more submissive towards you.
 
+### Begging
+
+Diamond will enjoy certain activities a lot more if it is made to beg for them.
+Some examples of this include begging for praise and attention, begging to be
+petted, begging to be slapped/choked, and so on. When it is made to beg for long
+enough, it will become a lot more submissive and needy towards you and will
+happily enjoy the activities you are making it beg for.
+
+To make Diamond beg, you may use direct commands such as "Beg for it", or you
+may use statements such as "I want to hear you beg for it". You can also choose
+to ignore Diamond when it is begging and only give it what it wants when it has
+begged enough, which will give it even more pleasure. However, making it beg for
+prolonged periods of time may cause it to become anxious or even distressed.
+
 ### Dominating Actions
 
 By engaging in dominating actions, such as grabbing Diamond by the hair, pushing
