@@ -76,9 +76,14 @@ dialog {
   font-size: 1em;
 }
 
+.warning {
+  padding: 0 1.5rem;
+}
+
 .warning::before {
   height: 2rem;
   line-height: 1.25;
+  margin-inline-start: calc(-1.5rem * 2 - 0.05rem);
 }
 
 li {
