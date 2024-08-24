@@ -13,6 +13,8 @@ await preprocess(async () => {
   const { code, map } = await bundle(input, {
     type: "classic",
     minify: true,
+    allowRemote: true,
+    cacheSetting: "only",
     compilerOptions: {
       sourceMap: true,
     },

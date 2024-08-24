@@ -74,7 +74,7 @@ categories are as follows:
     attacks. It may feel hurt or betrayed more easily. It is important to be
     considerate of this.
   - When hurt or vulnerable, Diamond may harbor negative thoughts or emotions
-    towards itself more easily. It may also be more prone to self-harming
+    towards [itself] more easily. It may also be more prone to self-harming
     thoughts.
 
 ## Gaining Trust

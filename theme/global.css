@@ -6,13 +6,31 @@
   --code-font-size: 1em;
   --toc-width: 200px;
   --font-size: clamp(0.95rem, 0.8167rem + 0.5333vw, 1.15rem);
+  --border-radius: 0.5em;
+  --transition-duration: 0.1s;
+  --transition-easing: ease-in-out;
 
   font-size: var(--font-size);
+}
+
+@media (prefers-reduced-motion) {
+  --transition-duration: 0s;
+  --transition-easing: none;
+}
+
+* {
+  transition: var(--transition-duration) var(--transition-easing);
+  transition-property: background-color, border-color, box-shadow;
+}
+
+.require-javascript {
+  display: none;
 }
 
 html {
   font-family: "Reddit Sans", "Open Sans", sans-serif;
   font-optical-sizing: auto;
+  line-height: 1.35;
 }
 
 body {
@@ -88,4 +106,218 @@ dialog {
 
 li {
   margin: 0.5em 0;
+}
+
+blockquote {
+  border: 1px solid var(--quote-border);
+  border-radius: var(--border-radius);
+
+  margin: 1rem 0;
+  padding: 0 1rem;
+}
+
+.namevar {
+  color: var(--inline-code-color);
+}
+
+#information-table table {
+  margin: 0;
+}
+
+#information-table table thead {
+  display: none;
+}
+
+#information-table table td {
+  border: none;
+  padding: 0.25em 0;
+}
+
+#information-table table tr {
+  background-color: transparent;
+}
+
+#information-table table td:nth-child(1) {
+  font-weight: 600;
+  padding-right: 0.5em;
+}
+
+#information-table table td:nth-child(1)::before,
+#information-table table td:nth-child(1)::after {
+  content: '"';
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+#information-table table td:nth-child(2)::before {
+  content: "=";
+  opacity: 0.5;
+  padding-right: 0.5em;
+}
+
+#information-table a[href^="#preferences-"] {
+  font-size: 0.75em;
+}
+
+.preferences {
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-fg);
+
+  border: 1px solid var(--theme-popup-border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.preferences > * {
+  border: none;
+  background: none;
+
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.preferences > *:first-child {
+  border-radius: 0;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+.preferences > *:last-child {
+  border-radius: 0;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
+.preferences > *:not(:last-child) {
+  border-bottom: 1px solid var(--theme-popup-border);
+}
+
+.preferences > *:target {
+  outline: 2px solid var(--sidebar-active);
+  outline-offset: -2px;
+}
+
+.preferences > *:hover {
+  background-color: var(--theme-popup-border);
+}
+
+#namevars label {
+  display: grid;
+  grid-template:
+    "name name"
+    "input revert";
+  grid-template-columns: 1fr auto;
+  user-select: none;
+}
+
+#namevars label:hover {
+  background-color: inherit;
+}
+
+#namevars label:focus-within {
+  background-color: var(--theme-popup-border);
+}
+
+#namevars label > span:first-child {
+  grid-area: name;
+}
+
+#namevars label span {
+  font-size: 0.85rem;
+  font-weight: bold;
+
+  margin: 0.75rem 1rem;
+  margin-bottom: 0.25rem;
+}
+
+#namevars .input {
+  grid-area: input;
+
+  font-family: inherit;
+  font-size: inherit;
+
+  padding: 0.35em 0rem;
+  margin: 0 1rem;
+  margin-bottom: 0.25rem;
+  text-indent: 0;
+
+  border: none;
+  background-color: transparent;
+}
+
+#namevars .input:focus {
+  outline: none;
+}
+
+#namevars .revert-button {
+  grid-area: revert;
+
+  background-color: transparent;
+  border: none;
+  border-radius: var(--border-radius);
+
+  padding: 0;
+
+  margin: 0.25rem;
+  margin-left: 0;
+}
+
+#namevars .revert-button:hover {
+  background-color: var(--search-mark-bg);
+}
+
+#namevars .revert-button .material-icons {
+  line-height: 0;
+}
+
+#presets {
+  padding: 0;
+}
+
+#presets .preset {
+  display: grid;
+  grid-template:
+    "name checkmark"
+    "description checkmark";
+  grid-template-columns: 1fr auto;
+
+  margin: 0;
+  padding: 0.75rem 1rem;
+  padding-bottom: 0.85rem; /* same as p font-size */
+
+  text-align: left;
+}
+
+#presets strong {
+  grid-area: name;
+}
+
+#presets p {
+  grid-area: description;
+
+  margin: 0;
+  font-size: 0.85em;
+
+  opacity: 0.75;
+}
+
+#presets input[type="radio"] {
+  grid-area: checkmark;
+  align-self: center;
+  appearance: none;
+}
+
+#presets input[type="radio"]::before {
+  font-family: "Material Icons";
+  font-size: 1.5em;
+
+  width: 1em;
+  height: 1em;
+}
+
+#presets input[type="radio"]:checked::before {
+  content: "\e5ca";
 }

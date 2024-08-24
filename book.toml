@@ -11,9 +11,14 @@ build-dir = "dist"
 
 [output.html]
 preferred-dark-theme = "coal"
+smart-punctuation = true
 copy-fonts = false
 additional-css = ["theme/pagetoc.css", "theme/global.css"]
-additional-js = ["theme/pagetoc.js"]
+additional-js = [
+  "theme/pagetoc.js",
+  "scripts/dist/scripts.js",
+  "scripts/dist/scripts.js.map"
+]
 git-repository-url = "https://github.com/diamondburned/docs"
 git-repository-icon = "fa-github"
 
@@ -24,3 +29,9 @@ enable = true
 enable = false
 
 [preprocessor.pagetoc]
+
+[preprocessor.scripts]
+command = "preprocessors/scripts.ts"
+
+[preprocessor.namevar]
+command = "preprocessors/namevar.ts"

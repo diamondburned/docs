@@ -20,31 +20,43 @@
       let
         pkgs = import nixpkgs { inherit system; };
         name = "diamond-user-guide";
+
+        mdbookPkgs = with pkgs; [
+          mdbook
+          mdbook-pagetoc
+          mdbook-admonish
+        ];
       in
       {
         devShells.default = pkgs.mkShell {
           inherit name;
-          packages = with pkgs; [
-            self.formatter.${system}
-            nodePackages.prettier
-            languagetool
+          packages = pkgs.lib.flatten (
+            with pkgs;
+            [
+              self.formatter.${system}
+              nodePackages.prettier
+              languagetool
 
-            mdbook
-            mdbook-pagetoc
-          ];
+              deno
+              esbuild
+
+              mdbookPkgs
+            ]
+          );
         };
 
         packages.default =
           pkgs.runCommand name
             {
               src = ./.;
-              nativeBuildInputs = with pkgs; [
-                bash
-                jq
-
-                mdbook
-                mdbook-pagetoc
-              ];
+              nativeBuildInputs = pkgs.lib.flatten (
+                with pkgs;
+                [
+                  bash
+                  jq
+                  mdbookPkgs
+                ]
+              );
             }
             ''
               set -x

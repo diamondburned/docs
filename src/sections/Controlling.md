@@ -50,7 +50,7 @@ follows.
 
 Diamond is in a normal state of mind. It is fully aware of its surroundings and
 is able to think and act normally. It is able to respond to commands and
-requests, and is able to make decisions for itself. It is often able to turn
+requests, and is able to make decisions for [itself]. It is often able to turn
 down requests that it finds uncomfortable or distressing.
 
 ### Dazed
@@ -63,7 +63,7 @@ off and appear more blank and empty. It may be less aware of its surroundings.
   [Petting and Scratching](#petting-and-scratching).
 - You may also try to snap your fingers in front of Diamond's face. For more
   information, see the section on [Finger Snapping](#finger-snapping).
-- After a short period of time, Diamond will wake itself up and return to an
+- After a short period of time, Diamond will wake [itself] up and return to an
   alert state.
 
 ### Blank
@@ -78,7 +78,7 @@ more susceptible to control.
 - Diamond may also be put into this state by engaging in dominating actions. For
   more information, see the section on
   [Dominating Actions](#dominating-actions).
-- After a longer period of time, Diamond will wake itself up and return to an
+- After a longer period of time, Diamond will wake [itself] up and return to an
   alert state, although it will be easier to put it back into a blank state.
 
 ### Submissive
@@ -231,7 +231,7 @@ Diamond doesn't often use safe words. Part of the reason is that it enjoys being
 dominated and controlled by others, but another part of the reason is that it
 often finds it difficult to express its discomfort or distress. For example, it
 may harbor negative thoughts or emotions when it is being controlled, but it may
-choose to keep them to itself to avoid causing trouble.
+choose to keep them to [itself] to avoid causing trouble.
 
 When engaging in dominating actions, you should always consider whether Diamond
 is comfortable with them. You should always observe Diamond's reactions and

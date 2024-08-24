@@ -28,6 +28,9 @@
     <link rel="shortcut icon" href="{{ path_to_root }}favicon.png">
     {{/if}}
 
+    <!-- Normalize.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@3.0.0/modern-normalize.min.css">
+
     <link rel="stylesheet" href="{{ path_to_root }}css/variables.css">
     <link rel="stylesheet" href="{{ path_to_root }}css/general.css">
     <link rel="stylesheet" href="{{ path_to_root }}css/chrome.css">
@@ -41,6 +44,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
     {{#if copy_fonts}}
     <link rel="stylesheet" href="{{ path_to_root }}fonts/fonts.css">
@@ -293,11 +297,13 @@
     </script>
     {{/if}}
 
+    <!--
     {{#if search_js}}
     <script src="{{ path_to_root }}elasticlunr.min.js"></script>
     <script src="{{ path_to_root }}mark.min.js"></script>
     <script src="{{ path_to_root }}searcher.js"></script>
     {{/if}}
+    -->
 
     <script src="{{ path_to_root }}clipboard.min.js"></script>
     <script src="{{ path_to_root }}highlight.js"></script>
