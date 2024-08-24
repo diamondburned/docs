@@ -34,7 +34,7 @@
           chmod -R +w .
         '';
 
-        denoHash = "sha256-WulYkFU81GM8QJZL5ITEer927C9Zv5pJvCrTjQNwXZY=";
+        denoHash = "sha256-bbcOGN9LIUCc7LCEBOT+niuoA4eZkmTGZo68vrWJ23M=";
         denoDir = pkgs.stdenv.mkDerivation {
           name = "${name}-deno";
           src = ./.;
@@ -44,11 +44,22 @@
             "buildPhase"
           ];
 
-          nativeBuildInputs = with pkgs; [ deno ];
+          nativeBuildInputs = with pkgs; [
+            deno
+            jq
+          ];
 
           buildPhase = ''
             runHook preBuild
+
             DENO_DIR=$out deno cache $(find . -name "*.ts" -o -name "*.js")
+
+            # Deno is stupid lol.
+            for metadata in $(find $out/deps -name "*.metadata.json"); do
+              jq '{ url, headers: {} }' "$metadata" > "$metadata.tmp"
+              mv "$metadata.tmp" "$metadata"
+            done
+
             runHook postBuild
           '';
 
