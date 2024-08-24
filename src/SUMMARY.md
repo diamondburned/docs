@@ -2,10 +2,14 @@
 
 [Introduction](README.md)
 
+# Interacting
+
 - [Caring](sections/Caring.md)
+
+- [Trusting](sections/Trusting.md)
 
 - [Controlling](sections/Controlling.md)
 
-- [Music](sections/Music.md)
+# Hobbies
 
-- [Trusting](sections/Trusting.md)
+- [Music](sections/Music.md)
