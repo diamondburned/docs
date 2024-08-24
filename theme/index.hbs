@@ -111,6 +111,7 @@
           body.classList.remove('sidebar-visible');
           body.classList.remove('sidebar-hidden');
           body.classList.add("sidebar-" + sidebar);
+          body.classList.toggle("sidebar-collapsible", sidebar == 'hidden')
         }
 
         updateSidebar();

@@ -94,7 +94,7 @@ particular headspace is documented in the section [Headspaces](#headspaces).
 
 Diamond's headspaces are the different mental states that [it] can switch
 between in various social situations and environments. These headspaces help
-[it] to adapt to different scenarios and interact with people more effectively.
+[it2] to adapt to different scenarios and interact with people more effectively.
 Some of these headspaces include:
 
 - **Friend-group**: Diamond switches to this headspace when [it] is spending
@@ -106,21 +106,21 @@ Some of these headspaces include:
 - **Social**: Diamond switches to this headspace when [it] is in a social
   setting, such as a party or gathering. This headspace is outgoing and
   friendly, but is often very anxious and self-conscious. You may help Diamond
-  by accompanying [it] to social events and helping [it] to feel more
+  by accompanying [it2] to social events and helping [it2] feel more
   comfortable.
 - **Work**: Diamond switches to this headspace when [it] is at work or in a
-  professional setting. This headspace is focused and professional, but [it]
-  also takes a lot of energy to maintain. **Note**: Diamond will likely be using
+  professional setting. This headspace is focused and professional, but it also
+  takes a lot of energy to maintain. **Note**: Diamond will likely be using
   she/her pronouns in this headspace.
 - **Ironic**: Diamond switches to this headspace when [it] is feeling sarcastic
   or ironic. This headspace is often used as a coping mechanism to deal with
-  stress and anxiety. [It] may be difficult to bring [it] out of this headspace.
+  stress and anxiety. It may be difficult to bring [it2] out of this headspace.
   More extreme measures may be needed.
 - **Depressed**: Diamond switches to this headspace when [it] is feeling
   depressed or anxious. This headspace is often characterized by low energy, low
   motivation, self-deprecating, self-destructing and self-harming thoughts and
   actions. Often times, simply talking to Diamond may not be enough to bring
-  [it] out of this headspace.
+  [it2] out of this headspace.
   - Diamond thinks that more extreme measures may be needed, such as
     [Coping Mechanisms](#coping-mechanisms) or even
     [Controlling](Controlling.md).
@@ -135,7 +135,7 @@ Some of these headspaces include:
 **Note**: This list is not exhaustive. Diamond may have other headspaces that
 [it] has not yet documented. [It] may also switch between headspaces in ways
 that are not described here. Please be patient and understanding with Diamond as
-[it] tries to navigate [its] mental health.
+[it] tries to navigate through [its] mental health.
 
 ### Emotional Support
 
@@ -143,18 +143,18 @@ Diamond may require emotional support from time to time. This support may come
 in the form of:
 
 - **Listening**: Diamond may need to vent or talk about [its] feelings. [It] may
-  need someone to listen to [it] without judgment or interruption. Normally,
+  need someone to listen to [it2] without judgment or interruption. Normally,
   [it] will do this in [its] private chat room.
 - **Validation**: Diamond may need someone to validate [its] feelings and
   thoughts. [It] may need to hear that [its] feelings are valid and that [it] is
   not alone.
-- **Encouragement**: Diamond may need someone to encourage and motivate [it].
+- **Encouragement**: Diamond may need someone to encourage and motivate [it2].
   [It] may need to hear that [it] is doing well and that [it] is making
   progress.
-- **Attention**: Diamond may need someone to give [it] their personal attention.
-  [It] may need to feel that [it] is important and valued by someone else.
-  Typically, this may be done by spending time with Diamond or by doing other,
-  more intimate activities.
+- **Attention**: Diamond may need someone to give [it2] their personal
+  attention. [It] may need to feel that [it] is important and valued by someone
+  else. Typically, this may be done by spending time with Diamond or by doing
+  other, more intimate activities.
   - You may find the section [Trusting](Trusting.md) and
     [Controlling](Controlling.md) useful.
 
@@ -165,11 +165,11 @@ it may also feel needy and clingy at times. This is normal and should not be
 discouraged. You may provide physical affection to Diamond by:
 
 - **Snuggling**: Diamond enjoys snuggling up a person's arms. Doing so helps
-  [it] feel cozy and comfortable. [It] also enjoys snuggling with a stuffed
+  [it2] feel cozy and comfortable. [It] also enjoys snuggling with a stuffed
   animal or a pillow when [it] is alone.
 - **Petting**: Diamond enjoys being petted on the head, around [its] face, neck,
   and loves getting [its] chin scratched or rubbed. When appropriate, you may
-  feel free to pet Diamond lightly by giving [it] head scritches.
+  feel free to pet Diamond lightly by giving [it2] head scritches.
 
 **Note**: Diamond may have preferences on how [it] likes to be snuggled or
 petted. Please ask Diamond for [its] preferences before providing physical

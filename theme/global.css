@@ -160,9 +160,9 @@ main h6:target::before {
   color: var(--search-mark-bg);
 }
 
-.sidebar-hidden main h1::before,
-.sidebar-hidden main h2::before,
-.sidebar-hidden main h3::before {
+.sidebar-collapsible main h1::before,
+.sidebar-collapsible main h2::before,
+.sidebar-collapsible main h3::before {
   display: none;
 }
 
@@ -231,7 +231,6 @@ main h6:target::before {
   font-size: 1.25rem;
   height: 1.25rem;
   line-height: 1.25;
-  margin-top: 0.075rem;
   margin-inline-start: calc(-1.5rem * 2 - 0.075rem);
 }
 

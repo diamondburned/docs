@@ -62,11 +62,19 @@ For example, you can say "Diamond is a bot, and _it_ is very cool."
 
 Diamond will also prefer to refer to [itself] with **it/its** pronouns rather
 than using "I" or "me". This is called **third-person** it/its pronouns (3pp).
-For example, [it] might say "**this one** is eating dinner" or "**it** is eating
+For example, [it] might say "_this one_ is eating dinner" or "_it_ is eating
 dinner". Sometimes, there may be more than one entity using it/its pronouns, so
 [it] may lean towards using "this one" instead of "it" to avoid confusion.
 
+Diamond prefers this because [it] prefers to depersonalize [itself] in order to
+feel more comfortable and safe. Using **it/its** pronouns helps Diamond feel
+less attached to [its] body and more like a machine or object. This helps
+Diamond cope with [its] dissociation.
+
 #### she/her
+
+Diamond will sometimes go by **she/her** pronouns. This is usually when Diamond
+is feeling more feminine, womanly, or girly. For example, you can say "Diamond
 
 Under more professional or formal settings, Diamond will likely list [its]
 pronouns as only **she/her** to avoid confusion and to make [it] easier for
@@ -97,13 +105,6 @@ of interacting with Diamond. Some of these sections include
 [Trusting](sections/Trusting.md), which describes how to build trust with
 Diamond. These sections can be found in the sidebar on the left of this guide.
 
-## Updating
-
-This guide is still a work in progress. Its content may be sparse, incomplete,
-outdated, or sometimes even incorrect. As usual, **consent is important**. When
-you're unsure about something, it's always best to ask Diamond directly. For
-more information, see the section [Trusting](sections/Trusting.md).
-
 ## Preferences
 
 This documentation book allows you to modify variables and settings throughout
@@ -133,6 +134,36 @@ Please enable JavaScript to use these knobs.
 
 <div class="require-javascript">
 
+> **Preview**
+>
+> [Its] name is Diamond, and [it] goes by [it/its] pronouns.
+
+### Presets
+
+These variable presets are provided for your convenience:
+
+<fieldset id="presets" class="preferences">
+  <label class="preset">
+    <strong>Default</strong>
+    <p>The default settings for Diamond.</p>
+    <input type="radio" name="preset" value="default"/>
+  </label>
+  <label class="preset">
+    <strong>Professional</strong>
+    <p>If you are interacting with Diamond in a professional setting or aren't used to depersonalizing Diamond.</p>
+    <input type="radio" name="preset" value="professional" />
+  </label>
+  <label class="preset">
+    <strong>Pet</strong>
+    <p>For those who prefer a more intimate relationship with Diamond.</p>
+    <input type="radio" name="preset" value="pet"/>
+  </label>
+</fieldset>
+
+### Variables
+
+For more granular control, you can adjust these variables directly:
+
 <div id="namevars" class="preferences">
   <label class="namevar" id="preferences-identifier">
     <span>Identifier</span>
@@ -150,30 +181,11 @@ Please enable JavaScript to use these knobs.
   </label>
 </div>
 
-> **Preview**:
->
-> Diamond's name is Diamond and [it] goes by [it/its] pronouns.
-
-### Presets
-
-These variable presets are provided for your convenience:
-
-<fieldset id="presets" class="preferences">
-  <label class="preset">
-    <strong>Default</strong>
-    <p>The default settings for Diamond.</p>
-    <input type="radio" name="preset" value="default"/>
-  </label>
-  <label class="preset">
-    <strong>Professional</strong>
-    <p>If you are interacting with Diamond in a professional setting.</p>
-    <input type="radio" name="preset" value="professional" />
-  </label>
-  <label class="preset">
-    <strong>Pet</strong>
-    <p>For those who prefer a more intimate relationship with Diamond.</p>
-    <input type="radio" name="preset" value="pet"/>
-  </label>
-</fieldset>
-
 </div>
+
+## Updating
+
+This guide is still a work in progress. Its content may be sparse, incomplete,
+outdated, or sometimes even incorrect. As usual, **consent is important**. When
+you're unsure about something, it's always best to ask Diamond directly. For
+more information, see the section [Trusting](sections/Trusting.md).
