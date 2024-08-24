@@ -1,3 +1,6 @@
+import { html } from "jsr:@mark/html@1";
+export { html };
+
 export function isElement<T extends HTMLElement>(
   e: Element,
   T?: new () => T,

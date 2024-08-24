@@ -1,6 +1,5 @@
 import { assert } from "jsr:@std/assert@0.223.0";
-import { html } from "jsr:@mark/html@1";
-import { forAllElements, isElement } from "#/scripts/element.ts";
+import { forAllElements, html, isElement } from "#/scripts/element.ts";
 
 export type Namevar = {
   // namevar is the name of the namevar.
@@ -49,7 +48,7 @@ export const namevars: Namevar[] = [
     namevar: "pronouns",
     options: ["it/its/its", "she/her/hers"],
     preprocessMatcher:
-      /\[(it|its||its3|it's|itself|it\/its|she|her|hers|she's|herself|she\/her)\]/gi,
+      /\[(it|it2|its|its3|it's|itself|it\/its|she|her|hers|she's|herself|she\/her)\]/gi,
     preprocess: (match) => {
       match = match.slice(1, -1);
 
@@ -65,6 +64,8 @@ export const namevars: Namevar[] = [
       const pronoun = content.toLowerCase();
       const replace = {
         "it/its/its": {
+          it2: "it",
+          its3: "its",
           she: "it",
           her: "its",
           hers: "its",
@@ -74,6 +75,7 @@ export const namevars: Namevar[] = [
         }[pronoun],
         "she/her/hers": {
           it: "she",
+          it2: "her",
           its: "her",
           its3: "hers",
           itself: "herself",
@@ -144,9 +146,15 @@ function applyNamevar(namevar: Namevar, option: string) {
     selector: `span.namevar[data-namevar=${CSS.escape(namevar.namevar)}]`,
     element: HTMLSpanElement,
     apply: (e) => {
+      const wasApplied = !!e.dataset.namevarValue;
+
       e.textContent = namevar.replace(e.textContent || "", option, e);
       e.dataset.namevarValue = option;
-      e.classList.toggle("namevar-active", option !== namevar.options[0]);
+
+      if (wasApplied) {
+        e.classList.add("changed");
+        setTimeout(() => e.classList.remove("changed"), 1);
+      }
     },
   });
 

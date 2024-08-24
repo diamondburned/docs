@@ -28,15 +28,13 @@ export type Book = {
   sections: Section[];
 };
 
-export type Section = {
-  Chapter: Chapter;
-};
+export type Section = "Separator" | { Chapter: Chapter };
 
 export type Chapter = {
   name: string;
   number: number[] | null;
   content: string;
-  sub_items: unknown[];
+  sub_items: Section[];
   path: string;
   source_path: string;
   parent_names: string[];
@@ -49,7 +47,7 @@ console.log = console.error;
 type stdinData = [Context, Book];
 
 export async function preprocess(
-  preprocessor: (context: Context, sections: Book) => Promise<void> | void,
+  preprocessor: (context: Context, book: Book) => Promise<void> | void,
 ) {
   const stdin = await streams.toText(Deno.stdin.readable);
   if (!stdin) {
@@ -61,4 +59,19 @@ export async function preprocess(
   const [context, book] = JSON.parse(stdin) as stdinData;
   await preprocessor(context, book);
   console.info(JSON.stringify(book));
+}
+
+export function isChapter(section: Section): section is { Chapter: Chapter } {
+  return typeof section == "object" && "Chapter" in section;
+}
+
+export function isSeparator(section: Section): section is "Separator" {
+  return section === "Separator";
+}
+
+export function slugify(str: string): string {
+  return str
+    .toLowerCase()
+    .replace(/ /g, "-")
+    .replace(/[^a-z0-9-]/g, "");
 }

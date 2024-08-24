@@ -8,6 +8,9 @@ description = "This user guide is designed to help you understand the basics of 
 
 [build]
 build-dir = "dist"
+create-missing = false
+extra-watch-dirs = ["scripts", "preprocessors"]
+use-default-preprocessors = false
 
 [output.html]
 preferred-dark-theme = "coal"
@@ -17,21 +20,30 @@ additional-css = ["theme/pagetoc.css", "theme/global.css"]
 additional-js = [
   "theme/pagetoc.js",
   "scripts/dist/scripts.js",
-  "scripts/dist/scripts.js.map"
+  "scripts/dist/scripts.js.map",
+  "scripts/dist/subsectionindex.json"
 ]
 git-repository-url = "https://github.com/diamondburned/docs"
 git-repository-icon = "fa-github"
 
 [output.html.fold]
-enable = true
+enable = false
 
 [option.html.search]
 enable = false
 
-[preprocessor.pagetoc]
+[preprocessor.index]
+
+[preprocessor.toc-summary]
+command = "preprocessors/toc-summary.ts"
+after = ["index"]
 
 [preprocessor.scripts]
 command = "preprocessors/scripts.ts"
 
+[preprocessor.pagetoc]
+after = ["toc-summary"]
+
 [preprocessor.namevar]
 command = "preprocessors/namevar.ts"
+after = ["pagetoc", "scripts"]

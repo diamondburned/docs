@@ -1,5 +1,5 @@
 :root {
-  --sidebar-width: 150px;
+  --sidebar-width: clamp(150px, 20vw, 300px);
   --menu-bar-height: 40px;
   --content-max-width: 660px;
   --mono-font: "Inconsolata", monospace;
@@ -9,6 +9,16 @@
   --border-radius: 0.5em;
   --transition-duration: 0.1s;
   --transition-easing: ease-in-out;
+
+  --sidebar-shade-color-light: rgba(0 0 0 / 7%);
+  --sidebar-shade-color-dark: rgba(0 0 0 / 25%);
+  --sidebar-shade-color: light-dark(
+    var(--sidebar-shade-color-light),
+    var(--sidebar-shade-color-dark)
+  );
+
+  /* Hack: we're resetting this in the actual element. */
+  --sidebar-resize-indicator-width: 0px;
 
   font-size: var(--font-size);
 }
@@ -30,7 +40,8 @@
 html {
   font-family: "Reddit Sans", "Open Sans", sans-serif;
   font-optical-sizing: auto;
-  line-height: 1.35;
+  line-height: 1.5;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -54,6 +65,123 @@ dialog {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#menu-bar .center {
+  flex: 1;
+}
+
+#shadow-overlay {
+  position: fixed;
+  top: var(--menu-bar-height);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: none;
+}
+
+.scrolled #shadow-overlay {
+  /* --shade-color: color-mix( */
+  /*   in srgb, */
+  /*   var(--sidebar-shade-color) 75%, */
+  /*   transparent */
+  /* ); */
+  --shade-color: var(--sidebar-shade-color);
+
+  box-shadow: inset 0 1px var(--shade-color);
+  background: linear-gradient(to bottom, var(--shade-color), transparent 4px);
+}
+
+.scrolled #menu-bar {
+  overflow: visible;
+}
+
+main h1::target::before,
+main h2::target::before,
+main h3::target::before {
+  --prefix: "🔗";
+}
+
+main h1 {
+  counter-reset: section var(--section-number) subsection;
+}
+
+main h1::before {
+  content: counters(section, ".") ". " !important;
+}
+
+main h2 {
+  counter-increment: subsection;
+  counter-reset: subsubsection;
+}
+
+main h2::before {
+  content: counters(section, ".") "." counters(subsection, ".") ". " !important;
+}
+
+main h3 {
+  counter-increment: subsubsection;
+}
+
+main h3::before {
+  content: counters(section, ".") "." counters(subsection, ".") "."
+    counters(subsubsection, ".") ". " !important;
+}
+
+main h1::before,
+main h2::before,
+main h3::before {
+  font-weight: 300;
+  font-variant: tabular-nums;
+
+  display: inline-block;
+  width: 4em !important;
+  margin-inline-start: calc(-4em - 0.5rem) !important;
+  margin-right: 0.5rem;
+  text-align: right;
+}
+
+main h1:target::before,
+main h2:target::before,
+main h3:target::before {
+  background-color: color-mix(in srgb, var(--links) 40%, transparent);
+}
+
+main h4:target::before,
+main h5:target::before,
+main h6:target::before {
+  content: "»";
+
+  width: 1em !important;
+  margin-inline-start: calc(-1em - 0.5rem) !important;
+  margin-right: 0.5rem;
+  text-align: right;
+
+  color: var(--search-mark-bg);
+}
+
+.sidebar-hidden main h1::before,
+.sidebar-hidden main h2::before,
+.sidebar-hidden main h3::before {
+  display: none;
+}
+
+.content-wrap {
+  overflow: visible;
+}
+
+.sidebar {
+  z-index: 100;
+  box-shadow: inset -1px 0 var(--sidebar-shade-color);
+}
+
+.sidebar .sidebar-resize-handle {
+  --sidebar-resize-indicator-width: 0.5rem;
+  right: 0;
+}
+
+.sidebar .sidebar-scrollbox {
+  padding: 1em;
 }
 
 #content-alert .title {
@@ -89,23 +217,36 @@ dialog {
   line-height: 1.5;
 }
 
-.menu-title {
-  font-weight: 400;
-  font-size: 1em;
+.theme-popup {
+  left: unset;
+  right: 60px;
 }
 
 .warning {
   padding: 0 1.5rem;
+  border-inline-start: 0.1em solid var(--warning-border);
 }
 
 .warning::before {
-  height: 2rem;
+  font-size: 1.25rem;
+  height: 1.25rem;
   line-height: 1.25;
-  margin-inline-start: calc(-1.5rem * 2 - 0.05rem);
+  margin-top: 0.075rem;
+  margin-inline-start: calc(-1.5rem * 2 - 0.075rem);
 }
 
 li {
   margin: 0.5em 0;
+}
+
+hr {
+  margin: 1em 0;
+  border: none;
+  border-top: 0.1em solid var(--scrollbar);
+}
+
+p {
+  margin: 1em 0;
 }
 
 blockquote {
@@ -116,8 +257,44 @@ blockquote {
   padding: 0 1rem;
 }
 
+.chapter {
+  counter-reset: item -1;
+}
+
+.chapter > li {
+  counter-increment: item;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.chapter > li > ol {
+  counter-reset: subitem;
+
+  display: block;
+  padding-inline-start: 2.5rem;
+  list-style: decimal;
+  font-size: 0.9em;
+}
+
+.chapter > li > ol > li {
+  counter-increment: subitem;
+
+  display: list-item;
+}
+
+.chapter > li > ol > li::marker {
+  content: counter(item) "." counter(subitem) ". ";
+}
+
 .namevar {
   color: var(--inline-code-color);
+  transition: background-color 0.5s var(--transition-easing);
+}
+
+.namevar.changed {
+  background-color: var(--search-mark-bg);
+  transition: none;
 }
 
 #information-table table {

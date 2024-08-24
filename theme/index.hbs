@@ -160,9 +160,19 @@
         to ask Diamond directly.</p>
         <p><strong>Trigger warning</strong>: sexually explicit content, self-harm, mental health issues,
         dubious consent, and more.</p>
-        <p>By continuing, you acknowledge that you have read and understood this warning.</p>
+        <p class="require-javascript">By continuing, you acknowledge that you have read and understood this warning.</p>
+
+        <noscript>
+          <hr>
+
+          <strong>JavaScript is disabled in your browser.</strong>
+          <p>This book contains interactive content that requires JavaScript to
+          function properly. Unfortunately, you will not be able to view this content
+          without enabling JavaScript.</p>
+        </noscript>
       </div>
-      <footer>
+
+      <footer class="require-javascript">
         <button id="content-alert-back" class="primary-button" title="Go back" aria-label="Go back" onclick="respondContentAlert(false)">
           <i class="fa fa-arrow-left"></i>
           <span>Go back</span>
@@ -174,22 +184,6 @@
       </footer>
     </dialog>
 
-    <script>
-      const contentAlert = document.getElementById('content-alert');
-      if (localStorage.getItem('content-alert')) {
-        contentAlert.remove();
-      }
-
-      function respondContentAlert(agree) {
-        if (!agree) {
-          history.back();
-          return;
-        }
-        localStorage.setItem('content-alert', 'true');
-        contentAlert.remove();
-      }
-    </script>
-
     <div id="page-wrapper" class="page-wrapper">
 
       <div class="page">
@@ -200,6 +194,14 @@
             <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
               <i class="fa fa-bars"></i>
             </label>
+            <a role="button" href="{{ path_to_root }}" title="Home" aria-label="Home">
+              <i class="fa fa-home"></i>
+            </a>
+          </div>
+
+          <div class="center"></div>
+
+          <div class="right-buttons">
             <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
               <i class="fa fa-paint-brush"></i>
             </button>
@@ -210,11 +212,6 @@
               <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
               <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
             </ul>
-          </div>
-
-          <h1 class="menu-title">{{ book_title }}</h1>
-
-          <div class="right-buttons">
             {{#if git_repository_url}}
             <a href="{{git_repository_url}}" title="Git repository" aria-label="Git repository">
               <i id="git-repository-button" class="fa {{git_repository_icon}}"></i>
@@ -222,6 +219,8 @@
             {{/if}}
           </div>
         </div>
+
+        <div id="shadow-overlay"></div>
 
         <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
         <script>
@@ -235,7 +234,7 @@
         <div id="content" class="content">
           <main>
             <aside class="toc">
-              <b>Table of Contents</b>
+              {{!-- <b>Table of Contents</b> --}}
               <nav class="pagetoc"></nav>
             </aside>
             <div class="content-wrap">
