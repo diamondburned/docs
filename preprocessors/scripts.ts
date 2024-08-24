@@ -1,31 +1,32 @@
 #!/usr/bin/env -S deno run -A
+import * as esbuild from "https://deno.land/x/esbuild@v0.20.2/mod.js";
+import { denoPlugins } from "jsr:@luca/esbuild-deno-loader@0.10.3";
 import { preprocess } from "#/preprocessors/lib/preprocessor.ts";
-import { bundle } from "jsr:@deno/emit";
-import deno from "#/deno.json" with { type: "json" };
+// import deno from "#/deno.json" with { type: "json" };
 
+const denoFile = new URL("../deno.json", import.meta.url).pathname;
 const scriptsDir = new URL("../scripts", import.meta.url).pathname;
 
 const input = scriptsDir + "/index.ts";
 const outputDir = scriptsDir + "/dist";
-const outputScript = outputDir + "/scripts.js";
+// const outputScript = outputDir + "/scripts.js";
 
 await preprocess(async () => {
-  const { code, map } = await bundle(input, {
-    type: "classic",
+  await esbuild.build({
+    plugins: [
+      ...denoPlugins({
+        loader: "native",
+        configPath: denoFile,
+      }),
+    ],
+    entryPoints: [input],
+    outdir: outputDir,
+    format: "iife",
+    target: ["chrome80", "firefox80"],
+    bundle: true,
     minify: true,
-    allowRemote: true,
-    cacheSetting: "only",
-    compilerOptions: {
-      sourceMap: true,
-    },
-    importMap: {
-      imports: deno.imports,
-    },
+    sourcemap: true,
   });
 
-  await Deno.mkdir(outputDir, { recursive: true });
-  await Deno.writeTextFile(outputScript, code);
-  if (map) {
-    await Deno.writeTextFile(outputScript + ".map", map);
-  }
+  esbuild.stop();
 });

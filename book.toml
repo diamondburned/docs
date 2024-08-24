@@ -19,8 +19,8 @@ copy-fonts = false
 additional-css = ["theme/pagetoc.css", "theme/global.css"]
 additional-js = [
   "theme/pagetoc.js",
-  "scripts/dist/scripts.js",
-  "scripts/dist/scripts.js.map",
+  "scripts/dist/index.js",
+  "scripts/dist/index.js.map",
   "scripts/dist/subsectionindex.json"
 ]
 git-repository-url = "https://github.com/diamondburned/docs"

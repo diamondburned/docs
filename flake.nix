@@ -18,6 +18,7 @@
     flake-utils.lib.eachDefaultSystem (
       system:
       let
+        lib = pkgs.lib;
         pkgs = import nixpkgs { inherit system; };
         name = "diamond-user-guide";
 
@@ -26,6 +27,35 @@
           mdbook-pagetoc
           mdbook-admonish
         ];
+
+        unpackPhase = ''
+          mkdir -p $out
+          cp -r --no-preserve=ownership $src/* .
+          chmod -R +w .
+        '';
+
+        denoHash = "sha256-WulYkFU81GM8QJZL5ITEer927C9Zv5pJvCrTjQNwXZY=";
+        denoDir = pkgs.stdenv.mkDerivation {
+          name = "${name}-deno";
+          src = ./.;
+
+          phases = [
+            "unpackPhase"
+            "buildPhase"
+          ];
+
+          nativeBuildInputs = with pkgs; [ deno ];
+
+          buildPhase = ''
+            runHook preBuild
+            DENO_DIR=$out deno cache $(find . -name "*.ts" -o -name "*.js")
+            runHook postBuild
+          '';
+
+          outputHashMode = "recursive";
+          outputHashAlgo = "sha256";
+          outputHash = denoHash;
+        };
       in
       {
         devShells.default = pkgs.mkShell {
@@ -36,13 +66,11 @@
               self.formatter.${system}
               nodePackages.prettier
               languagetool
-
               deno
-              esbuild
-
               mdbookPkgs
             ]
           );
+          ESBUILD_BINARY_PATH = lib.getExe pkgs.esbuild;
         };
 
         packages.default =
@@ -54,14 +82,23 @@
                 [
                   bash
                   jq
+                  deno
+                  esbuild
                   mdbookPkgs
                 ]
               );
+
+              DENO_DIR = denoDir;
+              ESBUILD_BINARY_PATH = lib.getExe pkgs.esbuild;
             }
             ''
               set -x
               mkdir -p $out
-              cd $src
+              cp -r --no-preserve=ownership $src/* .
+              chmod -R +w .
+
+              # Fix up shebangs.
+              patchShebangs $(find preprocessors -type f -executable)
 
               (
                 # Generate a fs.json for our documentation.
