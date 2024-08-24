@@ -34,7 +34,7 @@
           chmod -R +w .
         '';
 
-        denoHash = "sha256-bbcOGN9LIUCc7LCEBOT+niuoA4eZkmTGZo68vrWJ23M=";
+        denoHash = "sha256-Ck3EC/WOUmasiOxCRxIXb9oNNhrCtv4EY0yzgJHW2ks=";
         denoDir = pkgs.stdenv.mkDerivation {
           name = "${name}-deno";
           src = ./.;
@@ -52,10 +52,20 @@
           buildPhase = ''
             runHook preBuild
 
+            set -x
+
             DENO_DIR=$out deno cache $(find . -name "*.ts" -o -name "*.js")
 
+            for d in $out/*; do
+              case "$(basename "$d")" in
+              deps) continue ;;
+              gen)  continue ;;
+              *) rm -rf "$d" ;;
+              esac
+            done
+
             # Deno is stupid lol.
-            for metadata in $(find $out/deps -name "*.metadata.json"); do
+            find $out/deps -name "*.metadata.json" | while read metadata; do
               jq '{ url, headers: {} }' "$metadata" > "$metadata.tmp"
               mv "$metadata.tmp" "$metadata"
             done
@@ -81,7 +91,9 @@
               mdbookPkgs
             ]
           );
+
           ESBUILD_BINARY_PATH = lib.getExe pkgs.esbuild;
+          NPM_CONFIG_REGISTRY = "";
         };
 
         packages.default =
@@ -99,8 +111,8 @@
                 ]
               );
 
-              DENO_DIR = denoDir;
               ESBUILD_BINARY_PATH = lib.getExe pkgs.esbuild;
+              NPM_CONFIG_REGISTRY = "";
             }
             ''
               set -x
@@ -110,6 +122,10 @@
 
               # Fix up shebangs.
               patchShebangs $(find preprocessors -type f -executable)
+
+              # Unfuck DENO_DIR.
+              cp -r ${denoDir} /tmp/deno
+              export DENO_DIR=/tmp/deno
 
               (
                 # Generate a fs.json for our documentation.
