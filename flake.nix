@@ -34,7 +34,7 @@
           chmod -R +w .
         '';
 
-        denoHash = "sha256-Ck3EC/WOUmasiOxCRxIXb9oNNhrCtv4EY0yzgJHW2ks=";
+        denoHash = "sha256-T0otgKVMeczCCyuAJcfJEsF9VMog4vpmkEydUF3MARw=";
         denoDir = pkgs.stdenv.mkDerivation {
           name = "${name}-deno";
           src = ./.;
@@ -59,7 +59,6 @@
             for d in $out/*; do
               case "$(basename "$d")" in
               deps) continue ;;
-              gen)  continue ;;
               *) rm -rf "$d" ;;
               esac
             done
