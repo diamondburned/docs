@@ -29,7 +29,6 @@
           dart-sass
           esbuild
           mdbook
-          mdbook-pagetoc
           mdbook-admonish
         ];
 

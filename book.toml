@@ -19,10 +19,8 @@ copy-fonts = false
 additional-css = [
   "theme/dist/styles.css",
   # "theme/dist/styles.css.map",
-  "theme/pagetoc.css"
 ]
 additional-js = [
-  "theme/pagetoc.js",
   "scripts/dist/index.js",
   "scripts/dist/index.js.map",
   "scripts/dist/subsectionindex.json"
@@ -48,9 +46,6 @@ command = "preprocessors/scss.ts"
 [preprocessor.scripts]
 command = "preprocessors/scripts.ts"
 
-[preprocessor.pagetoc]
-after = ["toc-summary"]
-
 [preprocessor.namevar]
 command = "preprocessors/namevar.ts"
-after = ["pagetoc", "scripts"]
+after = ["toc-summary", "scripts"]
