@@ -1,20 +1,29 @@
 .admonition {
   --admonition-border-radius: var(--border-radius);
 
+  font-size: 0.95em;
+
   padding: 0;
 
   border-radius: var(--admonition-border-radius);
   border-inline-start-width: 0;
 
+  background-color: color-mix(
+    in srgb,
+    var(--sidebar-bg) 50%,
+    transparent
+  ) !important;
+
   &.admonish-warning {
-    border-width: 0.15rem;
+    border-width: 0.1rem;
+  }
+
+  &:not(.admonish-warning) {
+    border: 1px solid var(--theme-popup-border) !important;
   }
 
   & > .admonition-title {
     background: none !important;
-
-    font-size: 0.95em !important;
-    font-weight: bold;
 
     width: 100%;
     min-height: unset !important;

@@ -42,9 +42,6 @@
 }
 
 .preferences {
-  background-color: var(--sidebar-bg);
-  color: var(--sidebar-fg);
-
   border: 1px solid var(--theme-popup-border);
   border-radius: var(--border-radius);
   overflow: hidden;
@@ -82,8 +79,15 @@
   }
 
   & > *:hover {
-    background-color: var(--theme-popup-border);
+    background-color: color-mix(
+      in srgb,
+      var(--sidebar-bg) 50%,
+      transparent
+    ) !important;
+    color: var(--sidebar-fg);
   }
+
+  // background-color: var(--theme-popup-border);
 }
 
 #presets {
@@ -101,6 +105,10 @@
     padding-bottom: 0.85rem; /* same as p font-size */
 
     text-align: left;
+
+    &:checked {
+      background-color: var(--theme-popup-border);
+    }
 
     strong {
       grid-area: name;
@@ -159,7 +167,8 @@
     }
 
     &:focus-within {
-      background-color: var(--theme-popup-border);
+      background-color: var(--sidebar-bg);
+      color: var(--sidebar-fg);
     }
 
     & span {
