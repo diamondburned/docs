@@ -127,11 +127,16 @@
     appearance: none;
 
     &::before {
+      content: " ";
+
       font-family: "Material Icons";
       font-size: 1.5em;
 
+      display: inline-block;
       width: 1em;
       height: 1em;
+
+      margin-left: 0.5em;
     }
 
     &:checked::before {

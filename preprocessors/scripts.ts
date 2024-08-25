@@ -1,5 +1,5 @@
 #!/usr/bin/env -S deno run -A
-import * as esbuild from "https://deno.land/x/esbuild@v0.20.2/mod.js";
+import * as esbuild from "https://deno.land/x/esbuild@v0.23.0/mod.js";
 import { denoPlugins } from "jsr:@luca/esbuild-deno-loader@0.10.3";
 import { preprocess } from "#/preprocessors/lib/preprocessor.ts";
 // import deno from "#/deno.json" with { type: "json" };
@@ -11,7 +11,11 @@ const input = scriptsDir + "/index.ts";
 const outputDir = scriptsDir + "/dist";
 // const outputScript = outputDir + "/scripts.js";
 
-await preprocess(async () => {
+await preprocess(async (context) => {
+  if (context.renderer != "html") {
+    return;
+  }
+
   await esbuild.build({
     plugins: [
       ...denoPlugins({

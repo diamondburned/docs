@@ -3,10 +3,7 @@
 This user guide is designed to help you understand the basics of operating,
 interacting with, and using Diamond. It is maintained by Diamond [itself].
 
-<div class="warning">
-
-**Warning**:
-
+```admonish warning title="Content Warning"
 This guide contains sensitive information about Diamond that may be considered
 mature, explicit, or triggering. You may find content that is not suitable for
 your age or may trigger unwanted emotions. **Please proceed with caution.**
@@ -16,8 +13,7 @@ to ask Diamond directly.
 
 **Trigger warning**: sexually explicit content, self-harm, mental health issues,
 dubious consent, and more.
-
-</div>
+```
 
 ## What is Diamond?
 
@@ -134,9 +130,9 @@ Please enable JavaScript to use these knobs.
 
 <div class="require-javascript">
 
-> **Preview**
->
-> [Its] name is Diamond, and [it] goes by [it/its] pronouns.
+```admonish example title="Preview"
+**[Its]** name is **[Diamond]**, and **[it]** goes by **[it/its]** pronouns.
+```
 
 ### Presets
 
@@ -156,7 +152,7 @@ These variable presets are provided for your convenience:
   <label class="preset">
     <strong>Bot</strong>
     <p>For those who prefer to fully depersonalize Diamond.</p>
-    <input type="radio" name="preset" value="pet"/>
+    <input type="radio" name="preset" value="bot"/>
   </label>
 </fieldset>
 

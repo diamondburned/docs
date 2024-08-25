@@ -1,11 +1,6 @@
 # Controlling
 
----
-
-To repeat what was written in the [Introduction](../) page:
-
-<div class="warning">
-
+```admonish warning title="Content Warning"
 This guide contains sensitive information about Diamond that may be considered
 mature, explicit, or triggering. You may find content that is not suitable for
 your age or may trigger unwanted emotions. **Please proceed with caution.**
@@ -15,22 +10,17 @@ to ask Diamond directly.
 
 **Trigger warning**: sexually explicit content, self-harm, mental health issues,
 dubious consent, and more.
+```
 
-</div>
-
-<div class="warning">
-
-This section contains mentions of mind control, hypnosis and dubious consent.
-When engaging in these activities, you must always keep in mind that spoken
-consent is simply not enough. For more information, see the section on
+```admonish warning title="Content Warning: Consensuality"
+**This section contains mentions of mind control, hypnosis and dubious
+consent.** When engaging in these activities, you must always keep in mind that
+spoken consent is simply not enough. For more information, see the section on
 [Consent and Malleability](#consent-and-malleability).
-
-</div>
 
 You may find it helpful to first refer to the section [Trusting](Trusting.md)
 before continuing.
-
----
+```
 
 Diamond is particularly sensitive about how a person controls [it2]. [It] may
 not express this very clearly, but [it] has a strong preference for how [it] is

@@ -17,6 +17,7 @@ preferred-dark-theme = "coal"
 smart-punctuation = true
 copy-fonts = false
 additional-css = [
+  "theme/mdbook-admonish.css",
   "theme/dist/styles.css",
   # "theme/dist/styles.css.map",
 ]
@@ -33,6 +34,12 @@ enable = false
 
 [output.html.search]
 enable = false
+
+[output.markdown]
+
+[preprocessor.admonish]
+command = "mdbook-admonish"
+assets_version = "3.0.2" # do not edit: managed by `mdbook-admonish install`
 
 [preprocessor.index]
 

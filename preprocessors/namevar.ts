@@ -2,7 +2,11 @@
 import { isChapter, preprocess } from "#/preprocessors/lib/preprocessor.ts";
 import { namevars } from "#/scripts/namevar.ts";
 
-await preprocess((_, book) => {
+await preprocess((context, book) => {
+  if (context.renderer != "html") {
+    return;
+  }
+
   for (const section of book.sections) {
     if (!isChapter(section)) continue;
     const chapter = section.Chapter;

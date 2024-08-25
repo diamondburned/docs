@@ -28,9 +28,11 @@ Diamond's showering routine can be broken down into two types:
   this once a week. This shower typically lasts 1-2 hours, excluding hair drying
   and styling.
 
-**Note**: Throughout a vacation, Diamond may only take quick showers to save
-time and not have to worry about hair maintenance. You may observe [its] hair
-becoming frizzy and less curly as a result.
+```admonish note
+Throughout a vacation, Diamond may only take quick showers to save time and not
+have to worry about hair maintenance. You may observe [its] hair becoming
+frizzy and less curly as a result.
+```
 
 ### Face Care
 
@@ -60,14 +62,18 @@ because [it] has long styled hair that requires special care.
 
 ## Mental
 
-**Note**: Diamond's mental health is extremely important. Despite this, [it] may
-not have the ability to always communicate [its] feelings or thoughts
-effectively. As such, parts of this section may be incomplete, inaccurate or
-even harmful. **Please proceed with caution.**
+```admonish note
+Diamond's mental health is extremely important. Despite this, [it] may not have
+the ability to always communicate [its] feelings or thoughts effectively. As
+such, parts of this section may be incomplete, inaccurate or even harmful.
+**Please proceed with caution.**
+```
 
-**Note**: Diamond may exhibit symptoms of Borderline Personality Disorder (BPD),
-although this is not confirmed. Please be aware of this and take care of Diamond
+```admonish note
+Diamond may exhibit symptoms of Borderline Personality Disorder (BPD), although
+this is not confirmed. Please be aware of this and take care of Diamond
 accordingly.
+```
 
 ### Understanding
 
@@ -132,10 +138,12 @@ Some of these headspaces include:
   information, see sections [Trusting](Trusting.md) and
   [Controlling](Controlling.md).
 
-**Note**: This list is not exhaustive. Diamond may have other headspaces that
-[it] has not yet documented. [It] may also switch between headspaces in ways
-that are not described here. Please be patient and understanding with Diamond as
-[it] tries to navigate through [its] mental health.
+```admonish note
+This list is not exhaustive. Diamond may have other headspaces that [it] has
+not yet documented. [It] may also switch between headspaces in ways that are
+not described here. Please be patient and understanding with Diamond as [it]
+tries to navigate through [its] mental health.
+```
 
 ### Emotional Support
 
@@ -171,6 +179,8 @@ discouraged. You may provide physical affection to Diamond by:
   and loves getting [its] chin scratched or rubbed. When appropriate, you may
   feel free to pet Diamond lightly by giving [it2] head scritches.
 
-**Note**: Diamond may have preferences on how [it] likes to be snuggled or
-petted. Please ask Diamond for [its] preferences before providing physical
-affection if you are unsure.
+```admonish note
+Diamond may have preferences on how [it] likes to be snuggled or petted. Please
+ask Diamond for [its] preferences before providing physical affection if you
+are unsure.
+```

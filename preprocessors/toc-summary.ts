@@ -20,7 +20,11 @@ export type Section = {
   subsections?: Section[];
 };
 
-await preprocess(async (_, book) => {
+await preprocess(async (context, book) => {
+  if (context.renderer != "html") {
+    return;
+  }
+
   const output: SubsectionsOutput = [];
 
   for (const section of book.sections) {

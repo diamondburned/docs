@@ -12,10 +12,31 @@ let
   markdownDir = ./src;
 
   packages = {
-    inherit html markdown terminal;
+    html = copy "html" "${dist}/html";
+    markdown = copy "markdown" "${dist}/markdown";
+    terminal = terminal;
   };
 
-  html =
+  terminal =
+    pkgs.runCommand "${name}-terminal"
+      {
+        inherit dist;
+        nativeBuildInputs = with pkgs; [ lowdown ];
+      }
+      ''
+        cd $dist/markdown
+
+        find . -type f | while read -r path; do
+          input="''${path#./}"
+          output="$out/''${input%.md}.txt"
+          printf "%q -> %q\n" "$input" "$output" >&2
+
+          mkdir -p "$(dirname "$output")"
+          lowdown -tterm "$input" > "$output"
+        done
+      '';
+
+  dist =
     pkgs.runCommand name
       (
         {
@@ -52,28 +73,7 @@ let
         mv /tmp/_docsfs.json $out/
       '';
 
-  markdown = markdownDir;
-
-  terminal =
-    pkgs.runCommand "${name}-terminal"
-      {
-        inherit markdownDir;
-        nativeBuildInputs = with pkgs; [ lowdown ];
-      }
-      ''
-        cd $markdownDir
-
-        find . -type f | while read -r path; do
-          input="''${path#./}"
-          output="$out/''${input%.md}.txt"
-          printf "%q -> %q\n" "$input" "$output" >&2
-
-          mkdir -p "$(dirname "$output")"
-          lowdown -tterm "$input" > "$output"
-        done
-      '';
-
-  denoHash = "sha256-T0otgKVMeczCCyuAJcfJEsF9VMog4vpmkEydUF3MARw=";
+  denoHash = "";
   denoDir = pkgs.stdenv.mkDerivation {
     name = "${name}-deno";
     src = ./.;
@@ -115,6 +115,13 @@ let
     outputHashAlgo = "sha256";
     outputHash = denoHash;
   };
+
+  copy =
+    what: path:
+    pkgs.runCommand "${name}-${what}" { } ''
+      mkdir -p $out
+      cp -r --no-preserve=ownership ${path}/. $out
+    '';
 in
 
 packages

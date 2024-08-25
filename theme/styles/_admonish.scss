@@ -1,0 +1,46 @@
+.admonition {
+  --admonition-border-radius: var(--border-radius);
+
+  padding: 0;
+
+  border-radius: var(--admonition-border-radius);
+  border-inline-start-width: 0;
+
+  &.admonish-warning {
+    border-width: 0.15rem;
+  }
+
+  & > .admonition-title {
+    background: none !important;
+
+    font-size: 0.95em !important;
+    font-weight: bold;
+
+    width: 100%;
+    min-height: unset !important;
+
+    margin-inline: 0 !important;
+
+    padding-block: 1em !important;
+    padding-inline: 3.25em 1rem !important;
+
+    border-top-left-radius: var(--admonition-border-radius);
+    border-top-right-radius: var(--admonition-border-radius);
+
+    &::before {
+      top: 1em !important;
+      inset-inline-start: 1rem !important;
+
+      width: 1.5em !important;
+      height: 1.5em !important;
+    }
+  }
+
+  & > :not(.admonition-title) {
+    padding-inline: 1rem !important;
+
+    & > p:first-child {
+      margin-top: 0;
+    }
+  }
+}
