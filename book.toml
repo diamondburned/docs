@@ -33,7 +33,7 @@ git-repository-icon = "fa-github"
 [output.html.fold]
 enable = false
 
-[option.html.search]
+[output.html.search]
 enable = false
 
 [preprocessor.index]
