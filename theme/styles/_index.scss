@@ -132,10 +132,10 @@
 
       width: 1em;
       height: 1em;
+    }
 
-      &:checked {
-        content: "\e5ca";
-      }
+    &:checked::before {
+      content: "\e5ca";
     }
   }
 }

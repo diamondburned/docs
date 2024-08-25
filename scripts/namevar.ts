@@ -97,7 +97,7 @@ export const presets = {
     identifier: "Diamond",
     pronouns: "she/her/hers",
   },
-  pet: {
+  bot: {
     identifier: "d14",
     pronouns: "it/its/its",
   },
@@ -146,14 +146,15 @@ function applyNamevar(namevar: Namevar, option: string) {
     selector: `span.namevar[data-namevar=${CSS.escape(namevar.namevar)}]`,
     element: HTMLSpanElement,
     apply: (e) => {
-      const wasApplied = !!e.dataset.namevarValue;
+      const oldValue = e.textContent;
+      const newValue = namevar.replace(oldValue || "", option, e);
 
-      e.textContent = namevar.replace(e.textContent || "", option, e);
+      e.textContent = newValue;
       e.dataset.namevarValue = option;
 
-      if (wasApplied) {
+      if (oldValue != newValue) {
         e.classList.add("changed");
-        setTimeout(() => e.classList.remove("changed"), 1);
+        setTimeout(() => e.classList.remove("changed"), 100);
       }
     },
   });

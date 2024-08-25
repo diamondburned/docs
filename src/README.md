@@ -154,8 +154,8 @@ These variable presets are provided for your convenience:
     <input type="radio" name="preset" value="professional" />
   </label>
   <label class="preset">
-    <strong>Pet</strong>
-    <p>For those who prefer a more intimate relationship with Diamond.</p>
+    <strong>Bot</strong>
+    <p>For those who prefer to fully depersonalize Diamond.</p>
     <input type="radio" name="preset" value="pet"/>
   </label>
 </fieldset>
