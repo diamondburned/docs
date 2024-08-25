@@ -1,0 +1,63 @@
+:root {
+  --sidebar-width: clamp(150px, 20vw, 300px);
+
+  --sidebar-shade-color-light: rgba(0 0 0 / 7%);
+  --sidebar-shade-color-dark: rgba(0 0 0 / 25%);
+  --sidebar-shade-color: light-dark(
+    var(--sidebar-shade-color-light),
+    var(--sidebar-shade-color-dark)
+  );
+
+  /* Hack: we're resetting this in the actual element. */
+  --sidebar-resize-indicator-width: 0px;
+}
+
+.sidebar {
+  z-index: 100;
+  box-shadow: inset -1px 0 var(--sidebar-shade-color);
+
+  .sidebar-resize-handle {
+    --sidebar-resize-indicator-width: 0.5rem;
+    right: 0;
+  }
+
+  .sidebar-scrollbox {
+    padding: 1em;
+  }
+}
+
+.chapter {
+  counter-reset: item -1;
+
+  & > li {
+    display: flex;
+    flex-direction: column;
+
+    &[data-section] {
+      counter-increment: item;
+    }
+
+    & > ol {
+      counter-reset: subitem;
+
+      display: block;
+      padding-inline-start: 2.5rem;
+      list-style: decimal;
+      font-size: 0.9em;
+
+      & > li {
+        counter-increment: subitem;
+
+        display: list-item;
+
+        &::marker {
+          content: counter(item) "." counter(subitem) ". ";
+        }
+      }
+    }
+
+    &:not(.expanded) + li > ol {
+      display: block;
+    }
+  }
+}

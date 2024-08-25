@@ -1,0 +1,63 @@
+main {
+  h1 {
+    counter-reset: section var(--section-number) subsection;
+
+    &::before {
+      content: counters(section, ".") ". " !important;
+    }
+  }
+
+  h2 {
+    counter-increment: subsection;
+    counter-reset: subsubsection;
+
+    &::before {
+      content: counters(section, ".") "." counters(subsection, ".") ". " !important;
+    }
+  }
+
+  h3 {
+    counter-increment: subsubsection;
+
+    &::before {
+      content: counters(section, ".") "." counters(subsection, ".") "."
+        counters(subsubsection, ".") ". " !important;
+    }
+  }
+
+  h1::before,
+  h2::before,
+  h3::before {
+    font-weight: 300;
+    font-variant: tabular-nums;
+
+    display: inline-block;
+    width: 4em !important;
+    margin-inline-start: calc(-4em - 0.5rem) !important;
+    margin-right: 0.5rem;
+    text-align: right;
+
+    &:target {
+      background-color: color-mix(in srgb, var(--links) 40%, transparent);
+    }
+
+    @at-root (with: all) {
+      .sidebar-collapsible {
+        display: none;
+      }
+    }
+  }
+
+  h4::before:target,
+  h5::before:target,
+  h6::before:target {
+    content: "»";
+
+    width: 1em !important;
+    margin-inline-start: calc(-1em - 0.5rem) !important;
+    margin-right: 0.5rem;
+    text-align: right;
+
+    color: var(--search-mark-bg);
+  }
+}

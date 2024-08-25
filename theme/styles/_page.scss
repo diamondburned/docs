@@ -1,0 +1,60 @@
+:root {
+  --menu-bar-height: 40px;
+  --content-max-width: 660px;
+}
+
+#menu-bar {
+  .center {
+    flex: 1;
+  }
+
+  @at-root (with: all) {
+    .scrolled {
+      overflow: visible;
+    }
+  }
+}
+
+#shadow-overlay {
+  position: fixed;
+  top: var(--menu-bar-height);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: none;
+
+  @at-root (with: all) {
+    .scrolled {
+      --shade-color: var(--sidebar-shade-color);
+
+      box-shadow: inset 0 1px var(--shade-color);
+      background: linear-gradient(
+        to bottom,
+        var(--shade-color),
+        transparent 4px
+      );
+    }
+  }
+}
+
+.namevar {
+  color: var(--inline-code-color);
+  transition: background-color 0.5s var(--transition-easing);
+
+  &.changed {
+    background-color: var(--search-mark-bg);
+    transition: none;
+  }
+}
+
+.warning {
+  padding: 0 1.5rem;
+  border-inline-start: 0.1em solid var(--warning-border);
+
+  &::before {
+    font-size: 1.25rem;
+    height: 1.25rem;
+    line-height: 1.25;
+    margin-inline-start: calc(-1.5rem * 2 - 0.075rem);
+  }
+}

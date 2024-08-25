@@ -16,7 +16,11 @@ use-default-preprocessors = false
 preferred-dark-theme = "coal"
 smart-punctuation = true
 copy-fonts = false
-additional-css = ["theme/pagetoc.css", "theme/global.css"]
+additional-css = [
+  "theme/dist/styles.css",
+  # "theme/dist/styles.css.map",
+  "theme/pagetoc.css"
+]
 additional-js = [
   "theme/pagetoc.js",
   "scripts/dist/index.js",
@@ -37,6 +41,9 @@ enable = false
 [preprocessor.toc-summary]
 command = "preprocessors/toc-summary.ts"
 after = ["index"]
+
+[preprocessor.scss]
+command = "preprocessors/scss.ts"
 
 [preprocessor.scripts]
 command = "preprocessors/scripts.ts"

@@ -22,96 +22,82 @@
         pkgs = import nixpkgs { inherit system; };
         name = "diamond-user-guide";
 
-        mdbookPkgs = with pkgs; [
+        runtimePkgs = with pkgs; [
+          bash
+          deno
+          dart-sass
+          esbuild
           mdbook
           mdbook-pagetoc
           mdbook-admonish
         ];
-
-        unpackPhase = ''
-          mkdir -p $out
-          cp -r --no-preserve=ownership $src/* .
-          chmod -R +w .
-        '';
-
-        denoHash = "sha256-T0otgKVMeczCCyuAJcfJEsF9VMog4vpmkEydUF3MARw=";
-        denoDir = pkgs.stdenv.mkDerivation {
-          name = "${name}-deno";
-          src = ./.;
-
-          phases = [
-            "unpackPhase"
-            "buildPhase"
-          ];
-
-          nativeBuildInputs = with pkgs; [
-            deno
-            jq
-          ];
-
-          buildPhase = ''
-            runHook preBuild
-
-            set -x
-
-            DENO_DIR=$out deno cache $(find . -name "*.ts" -o -name "*.js")
-
-            for d in $out/*; do
-              case "$(basename "$d")" in
-              deps) continue ;;
-              *) rm -rf "$d" ;;
-              esac
-            done
-
-            # Deno is stupid lol.
-            find $out/deps -name "*.metadata.json" | while read metadata; do
-              jq '{ url, headers: {} }' "$metadata" > "$metadata.tmp"
-              mv "$metadata.tmp" "$metadata"
-            done
-
-            runHook postBuild
-          '';
-
-          outputHashMode = "recursive";
-          outputHashAlgo = "sha256";
-          outputHash = denoHash;
-        };
       in
       {
         devShells.default = pkgs.mkShell {
           inherit name;
-          packages = pkgs.lib.flatten (
+          packages =
             with pkgs;
             [
               self.formatter.${system}
               nodePackages.prettier
               languagetool
-              deno
-              mdbookPkgs
             ]
-          );
+            ++ runtimePkgs;
 
           ESBUILD_BINARY_PATH = lib.getExe pkgs.esbuild;
-          NPM_CONFIG_REGISTRY = "";
         };
 
         packages.default =
+          let
+            denoHash = "sha256-T0otgKVMeczCCyuAJcfJEsF9VMog4vpmkEydUF3MARw=";
+            denoDir = pkgs.stdenv.mkDerivation {
+              name = "${name}-deno";
+              src = ./.;
+
+              phases = [
+                "unpackPhase"
+                "buildPhase"
+              ];
+
+              nativeBuildInputs = with pkgs; [
+                deno
+                jq
+              ];
+
+              buildPhase = ''
+                runHook preBuild
+
+                set -x
+
+                DENO_DIR=$out deno cache $(find . -name "*.ts" -o -name "*.js")
+
+                for d in $out/*; do
+                  case "$(basename "$d")" in
+                  deps) continue ;;
+                  *) rm -rf "$d" ;;
+                  esac
+                done
+
+                # Deno is stupid lol.
+                find $out/deps -name "*.metadata.json" | while read metadata; do
+                  jq '{ url, headers: {} }' "$metadata" > "$metadata.tmp"
+                  mv "$metadata.tmp" "$metadata"
+                done
+
+                runHook postBuild
+              '';
+
+              outputHashMode = "recursive";
+              outputHashAlgo = "sha256";
+              outputHash = denoHash;
+            };
+          in
           pkgs.runCommand name
             {
               src = ./.;
-              nativeBuildInputs = pkgs.lib.flatten (
-                with pkgs;
-                [
-                  bash
-                  jq
-                  deno
-                  esbuild
-                  mdbookPkgs
-                ]
-              );
+              nativeBuildInputs = with pkgs; [ jq ] ++ runtimePkgs;
 
               ESBUILD_BINARY_PATH = lib.getExe pkgs.esbuild;
-              NPM_CONFIG_REGISTRY = "";
             }
             ''
               set -x

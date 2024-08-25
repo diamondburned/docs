@@ -6,7 +6,7 @@ async function fetchSubsectionIndex(): Promise<SubsectionsOutput> {
   return response.json();
 }
 
-async function updateSidebar(subsectionIndex: SubsectionsOutput) {
+function updateSidebar(subsectionIndex: SubsectionsOutput) {
   const chapterList = document.querySelector("#sidebar ol.chapter");
   if (!chapterList) {
     console.warn("No chapter list found in sidebar");
@@ -18,10 +18,13 @@ async function updateSidebar(subsectionIndex: SubsectionsOutput) {
   }
   chapterList.classList.add("root");
 
-  chapterList.querySelectorAll("li").forEach((li) => {
+  chapterList.querySelectorAll("li.chapter-item").forEach((li) => {
     assertElement(li, HTMLLIElement);
 
-    const a = li.querySelector("a")!;
+    const a = li.querySelector("a");
+    if (!a) {
+      return;
+    }
     assertElement(a, HTMLAnchorElement);
 
     // a.href is a relative path, so we have to resolve it.
@@ -32,6 +35,8 @@ async function updateSidebar(subsectionIndex: SubsectionsOutput) {
       console.warn("No indexed section found for", a.href);
       return;
     }
+
+    li.dataset.section = `${i}`;
 
     const section = subsectionIndex[i];
     if (!section.subsections) {
@@ -60,7 +65,8 @@ function updatePageTitle(subsectionIndex: SubsectionsOutput) {
     return;
   }
 
-  const i = subsectionIndex.findIndex((s) => s.link === location.pathname);
+  const path = location.pathname == "/" ? "/index.html" : location.pathname;
+  const i = subsectionIndex.findIndex((s) => s.link == path);
   if (i == -1) {
     console.warn("No indexed section found for", location.pathname);
     return;

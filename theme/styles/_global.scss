@@ -1,0 +1,73 @@
+:root {
+  --sans-font: "Reddit Sans", "Open Sans", sans-serif;
+  --mono-font: "Inconsolata", monospace;
+  --code-font-size: 1em;
+  --toc-width: 200px;
+  --font-size: clamp(0.95rem, 0.8167rem + 0.5333vw, 1.15rem);
+  --border-radius: 0.5em;
+  --transition-duration: 0.1s;
+  --transition-easing: ease-in-out;
+
+  font-size: var(--font-size);
+
+  @media (prefers-reduced-motion) {
+    --transition-duration: 0s;
+    --transition-easing: none;
+  }
+}
+
+* {
+  transition: var(--transition-duration) var(--transition-easing);
+  transition-property: background-color, border-color, box-shadow;
+}
+
+html {
+  font-optical-sizing: auto;
+  font-family: var(--sans-font);
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1em;
+}
+
+li {
+  margin: 0.5em 0;
+}
+
+hr {
+  margin: 1em 0;
+  border: none;
+  border-top: 0.1em solid var(--scrollbar);
+}
+
+p {
+  margin: 1em 0;
+}
+
+blockquote {
+  border: 1px solid var(--quote-border);
+  border-radius: var(--border-radius);
+
+  margin: 1rem 0;
+  padding: 0 1rem;
+}
+
+.require-javascript {
+  display: none;
+}
+
+.content-wrap {
+  overflow: visible;
+}
+
+.content p,
+.content ul {
+  line-height: 1.5;
+}
+
+.theme-popup {
+  left: unset;
+  right: 60px;
+}
