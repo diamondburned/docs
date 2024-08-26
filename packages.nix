@@ -73,7 +73,7 @@ let
         mv /tmp/_docsfs.json $out/
       '';
 
-  denoHash = "";
+  denoHash = "sha256-1/aFW2emnrPmjDrLilptgIh1gdM9XkUuLcm3Jx13zLg=";
   denoDir = pkgs.stdenv.mkDerivation {
     name = "${name}-deno";
     src = ./.;
