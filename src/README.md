@@ -15,6 +15,15 @@ to ask Diamond directly.
 dubious consent, and more.
 ```
 
+```admonish note title="New to this guide?"
+This guide lets you change how it refers to [Diamond]. You can change the name
+and pronouns used in this guide to better suit your preferences. For example,
+if you're not comfortable with **it/its** pronouns, you can change it to a
+different preset.
+
+To do this, see the [Presets](#presets) under Preferences below.
+```
+
 ## What is Diamond?
 
 Diamond self-describes [itself] as a "girl" or "woman" to most people that [it]
