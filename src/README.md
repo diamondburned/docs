@@ -105,7 +105,7 @@ Diamond. These sections can be found in the sidebar on the left of this guide.
 
 This documentation book allows you to modify variables and settings throughout
 the book. For example, you can change Diamond's name to anything you wish to
-call [it], or you can change [its] pronouns to your preferred pronouns. These
+call [it2], or you can change [its] pronouns to your preferred pronouns. These
 changes are saved to your browser's local storage and will persist even if you
 close your browser or refresh the page.
 
