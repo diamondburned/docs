@@ -9,7 +9,9 @@
 
 let
   lib = pkgs.lib;
-  markdownDir = ./src;
+  hashes = builtins.fromJSON (builtins.readFile ./hashes.json);
+
+  markdownDir = self + "/src";
 
   packages = {
     html = copy "html" "${dist}/html";
@@ -40,7 +42,7 @@ let
     pkgs.runCommand name
       (
         {
-          src = ./.;
+          src = self;
           nativeBuildInputs = with pkgs; [ jq ] ++ buildInputs;
         }
         // extraAttrs
@@ -73,10 +75,9 @@ let
         mv /tmp/_docsfs.json $out/
       '';
 
-  denoHash = "sha256-KjzBhHZQ6K/4oTbRqSKB8JGdWLyZnSGmj3BkClllQ70=";
   denoDir = pkgs.stdenv.mkDerivation {
     name = "${name}-deno";
-    src = ./.;
+    src = self;
 
     phases = [
       "unpackPhase"
@@ -113,7 +114,7 @@ let
 
     outputHashMode = "recursive";
     outputHashAlgo = "sha256";
-    outputHash = denoHash;
+    outputHash = hashes.denoDir;
   };
 
   copy =

@@ -52,7 +52,7 @@
           // extraAttrs
         );
 
-        packages = import ./packages.nix {
+        packages = import ./nix/packages.nix {
           inherit
             self
             pkgs
