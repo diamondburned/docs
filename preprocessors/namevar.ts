@@ -1,6 +1,6 @@
 #!/usr/bin/env -S deno run -A
 import { isChapter, preprocess } from "#/preprocessors/lib/preprocessor.ts";
-import { namevars } from "#/scripts/namevar.ts";
+import { preprocessAllNamevars } from "#/scripts/namevar.ts";
 
 await preprocess((context, book) => {
   if (context.renderer != "html") {
@@ -10,12 +10,6 @@ await preprocess((context, book) => {
   for (const section of book.sections) {
     if (!isChapter(section)) continue;
     const chapter = section.Chapter;
-
-    for (const namevar of namevars) {
-      chapter.content = chapter.content.replace(
-        namevar.preprocessMatcher,
-        (match) => namevar.preprocess(match)().trim(),
-      );
-    }
+    chapter.content = preprocessAllNamevars(chapter.content);
   }
 });

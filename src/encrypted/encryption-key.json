@@ -1,0 +1,27 @@
+{
+	"kty": "ENC[AES256_GCM,data:8yXf,iv:BXs10wy+XDJmotENEVvHCXDPNc6cNBgSNg26BW3lcgs=,tag:2UERnZ5mIt9O8+50+m0ksA==,type:str]",
+	"k": "ENC[AES256_GCM,data:KxAVXmfEaEU8CtKLyIbh9VAGpbqv5wjs3O8X6AbAkwA=,iv:b0veewwdpC8uq310m4TWDrcC840RvuSaEmLBc02idV0=,tag:6Ndc4yOtlbltuYGeHWmgQA==,type:str]",
+	"alg": "ENC[AES256_GCM,data:8FguompmPA==,iv:79IYvDDHTfiO35tD6ogZaIk1d9B9w+T92nC3w+ZmwYc=,tag:3WEvH5RYhr96KTM8Wy3SGA==,type:str]",
+	"key_ops": [
+		"ENC[AES256_GCM,data:cwsLj3XWyQ==,iv:bqNIvqccu2WU1kWrRerU6kwUqg6GNeBMXNCpaGECdWM=,tag:SfPsQv/E+fbZjU4N3boNeA==,type:str]"
+	],
+	"ext": "ENC[AES256_GCM,data:ObjSWg==,iv:iKXjq5vzpHQDfeSWDcnzXZeJNSvevazP4z7a+kmO0ts=,tag:XuKo8fyILM8PBEM+JUCvkA==,type:bool]",
+	"sops": {
+		"kms": null,
+		"gcp_kms": null,
+		"azure_kv": null,
+		"hc_vault": null,
+		"age": null,
+		"lastmodified": "2024-10-14T05:25:59Z",
+		"mac": "ENC[AES256_GCM,data:Jjar/yFLK53irAnCY0SSM0DB+KOTrr7rFp/CmNfts4qw5y0gcCg4e+7RVHVatwQmWcdXXrU34/I2UD7rm9gFHkzLhOQF7Wrhl96eh6KCQzKs7cDT4Q1AWKiiWWIgddFsgpUgPBoyJ0/bbUOxw71gCuwjZuOhgp3FHzEKeAUFpVE=,iv:178NcXJYD13H7XZ7Fm5lkr9fSH+TprbXFTL6p321QG8=,tag:2O7YaUOBuXooSN0R9TD4Xg==,type:str]",
+		"pgp": [
+			{
+				"created_at": "2024-10-14T05:25:59Z",
+				"enc": "-----BEGIN PGP MESSAGE-----\n\nhQIMA8cOYD6/JWwkARAAjfyG5PJaWlIxRa6LhSZGpEzM3Sq6r5DTXfnXHFJ7znFp\nQ5ZakG9woANc3E6gtCg/EsOKNmdyws5xgFrh1mjHOVWprOyv/uCNpHJzsPf2RCG+\nMlkdpXTNHAdT56RUjAfzKNIiNoSjWXi6JeuPaRAjFLKyczMuCqFx8aMXmdlDQKJ0\npChQfmC7f9kq/LN0mHuXkbd7kE8fhlzZa5ZOkATRrVAqk0ba/A49dvPq3Ce7+kmL\nNCKxiOtd5AowzomjIHsRPnyKqoNrWAJPm5Vtz3Wt/xcPyXlcQKwaaieiF9YLiqeI\nXFPT9v7gV2CKK18fg7d51okMBBYpIXcooneQSHfsHWcC9zqHYNnhcMRXwFzEYqpd\nTeKWA8DHVtJOYESsK4U3HgMz8GNBfk0qmQ8CFw/5gPsNOcYwbOuZVNhXmfverbni\nR+ezRzxKITttxDfy97kUizb7iT6EaNmB+lQ9N1NYBeAD67vnULZ5JkCqkY8Wyjaz\nvllJuPQ4FyRRJlSXAFb8aPBEFoHAoiBo/71KCjH4gxD3GLDXp/UVngan1ZXCUbtt\n+LP/AoHbgXjsaIyix4JAioqNAEESlR1739BnBPiLZ7mkwVeKDNzz2ABXNTY+7D2b\nNBziK3/H9X3K36kfuJkowX5thqlIc+/82+nSm/fxdO8ZPjXPT8nmi7/B+xWtJ1rS\nXgEI9qbs3hSY9p4Qt+RMnkDdQTPPiIBDBr7iXAUq5sD/iZIa7FD1WZXtNRaopEkJ\nCyXJRSImad9RlWyrwDTQdJnhpYGQCPrI0S6ncVvidGc98uPysvtZJRmsS922NiM=\n=qxjs\n-----END PGP MESSAGE-----",
+				"fp": "F6928B0358386997646EA876D78C4471CE776659"
+			}
+		],
+		"unencrypted_suffix": "_unencrypted",
+		"version": "3.9.0"
+	}
+}

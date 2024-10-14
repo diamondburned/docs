@@ -141,10 +141,11 @@ function saveNamevar(namevar: Namevar, option: string) {
   applyNamevar(namevar, option);
 }
 
-function applyNamevar(namevar: Namevar, option: string) {
+function applyNamevar(namevar: Namevar, option: string, parent?: Element) {
   forAllElements({
     selector: `span.namevar[data-namevar=${CSS.escape(namevar.namevar)}]`,
     element: HTMLSpanElement,
+    parent,
     apply: (e) => {
       const oldValue = e.textContent;
       const newValue = namevar.replace(oldValue || "", option, e);
@@ -161,6 +162,7 @@ function applyNamevar(namevar: Namevar, option: string) {
 
   forAllElements({
     selector: `.input[data-namevar-for=${CSS.escape(namevar.namevar)}]`,
+    parent,
     apply: (e) => {
       if (isElement(e, HTMLInputElement) || isElement(e, HTMLSelectElement)) {
         e.value = option;
@@ -168,21 +170,22 @@ function applyNamevar(namevar: Namevar, option: string) {
     },
   });
 
-  updatePresets();
+  updatePresets(parent);
 }
 
-function updatePresets() {
+function updatePresets(parent?: Element) {
   const preset = currentPreset();
   forAllElements({
     selector: `.preset input[name="preset"]`,
     element: HTMLInputElement,
+    parent,
     apply: (e) => {
       e.checked = preset === e.value;
     },
   });
 }
 
-function applyAllNamevars() {
+function applyAllNamevars(parent?: Element) {
   for (const namevar of namevars) {
     const storageKey = `namevar-v1-${namevar.namevar}`;
 
@@ -193,7 +196,7 @@ function applyAllNamevars() {
       localStorage.setItem(storageKey, option);
     }
 
-    applyNamevar(namevar, option);
+    applyNamevar(namevar, option, parent);
   }
 }
 
@@ -231,10 +234,11 @@ function assertNamevarNotBound(e: HTMLElement) {
   e.dataset.namevarBound = "true";
 }
 
-function bindNamevarInputs() {
+function bindNamevarInputs(parent?: Element) {
   forAllElements({
     selector: `input.input[data-namevar-for]`,
     element: HTMLInputElement,
+    parent,
     apply: (e) => {
       assertNamevarNotBound(e);
       assert(e.dataset.namevarFor, "Missing data-namevar-for");
@@ -258,6 +262,7 @@ function bindNamevarInputs() {
   forAllElements({
     selector: `select.input[data-namevar-for]`,
     element: HTMLSelectElement,
+    parent,
     apply: (e) => {
       assertNamevarNotBound(e);
       assert(e.dataset.namevarFor, "Missing data-namevar-for");
@@ -273,6 +278,7 @@ function bindNamevarInputs() {
   forAllElements({
     selector: `button.revert-button[data-namevar-revert]`,
     element: HTMLButtonElement,
+    parent,
     apply: (e) => {
       assertNamevarNotBound(e);
       assert(e.dataset.namevarRevert, "Missing data-namevar-revert");
@@ -289,6 +295,7 @@ function bindNamevarInputs() {
   forAllElements({
     selector: `.preset input[name="preset"]`,
     element: HTMLInputElement,
+    parent,
     apply: (e) => {
       assertNamevarNotBound(e);
       e.addEventListener("change", () => {
@@ -313,8 +320,21 @@ function bindNamevarInputs() {
 // apply is the main function to apply all namevars.
 // It is idempotent and can be called multiple times but will properly handle
 // new elements.
-export function apply() {
-  applyAllNamevars();
-  bindNamevarInputs();
-  updatePresets();
+export function apply(parent?: Element) {
+  applyAllNamevars(parent);
+  bindNamevarInputs(parent);
+  updatePresets(parent);
+}
+
+export function preprocessNamevar(namevar: Namevar, content: string): string {
+  return content.replace(namevar.preprocessMatcher, (match) =>
+    namevar.preprocess(match)().trim(),
+  );
+}
+
+export function preprocessAllNamevars(content: string): string {
+  for (const namevar of namevars) {
+    content = preprocessNamevar(namevar, content);
+  }
+  return content;
 }

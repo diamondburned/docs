@@ -1,0 +1,50 @@
+html-encrypted {
+  &:has(> .decrypted-content) {
+    --stripe: 20px;
+    --stripe-1: color-mix(in srgb, var(--warning-border) 15%, transparent);
+    --stripe-2: color-mix(in srgb, var(--warning-border) 05%, transparent);
+
+    display: flex;
+    flex-direction: column;
+
+    border: 0.1rem solid var(--warning-border);
+    border-radius: var(--border-radius);
+    position: relative;
+    overflow: hidden;
+
+    box-shadow: var(--notification-shadow);
+
+    &:before {
+      top: 0;
+      left: 0;
+      width: 100%;
+      content: "🔓 Decrypted / Confidential";
+      font-size: 0.85em;
+      opacity: 0.75;
+      padding: 0.5rem 1rem;
+
+      background-image: repeating-linear-gradient(
+        135deg,
+        var(--stripe-1) 0px,
+        var(--stripe-1) calc(var(--stripe) / 2),
+        var(--stripe-2) calc(var(--stripe) / 2),
+        var(--stripe-2) calc(var(--stripe))
+      );
+    }
+  }
+
+  & > div.decrypted-content {
+    margin: 0.5em 1em;
+
+    h4,
+    h5,
+    h6 {
+      margin: 1em 0;
+    }
+  }
+}
+
+.encrypted-notification {
+  font-style: italic;
+  opacity: 0.8;
+}

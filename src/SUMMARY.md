@@ -10,6 +10,8 @@
 
 - [Controlling](sections/Controlling.md)
 
+- [Tagging and Encryption](sections/tagging-and-encryption.md)
+
 # Hobbies
 
 - [Music](sections/Music.md)

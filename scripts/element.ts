@@ -21,12 +21,15 @@ export function forAllElements<T extends HTMLElement>({
   selector,
   element,
   apply,
+  parent,
 }: {
   selector: string;
   element?: new () => T;
   apply: (e: T) => void;
+  parent?: Element | Document;
 }) {
-  document.querySelectorAll(selector).forEach((e) => {
+  parent = parent || document;
+  parent!.querySelectorAll(selector).forEach((e) => {
     if (!isElement(e, element)) {
       console.debug("Element does not match type", { e, element, selector });
       return;

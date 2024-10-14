@@ -8,6 +8,10 @@
   --transition-duration: 0.1s;
   --transition-easing: ease-in-out;
 
+  // Copied from Admonish.
+  --notification-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.05),
+    0 0 0.1rem rgba(0, 0, 0, 0.1);
+
   font-size: var(--font-size);
 
   @media (prefers-reduced-motion) {
@@ -62,12 +66,27 @@ blockquote {
   overflow: visible;
 }
 
-.content p,
-.content ul {
-  line-height: 1.5;
-}
-
 .theme-popup {
   left: unset;
   right: 60px;
+}
+
+.content {
+  a.email,
+  a.phone {
+    color: inherit;
+
+    &:visited {
+      color: inherit;
+    }
+  }
+
+  ul {
+    line-height: 1.25;
+  }
+
+  p,
+  & > ul {
+    line-height: 1.5;
+  }
 }

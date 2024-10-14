@@ -45,6 +45,8 @@
               self.formatter.${system}
               nodePackages.prettier
               languagetool
+              age
+              sops
             ];
           }
           // extraAttrs

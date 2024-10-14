@@ -1,0 +1,12 @@
+creation_rules:
+  - path_regex: .*
+
+    # gpg recipients:
+    #   - diamondburned (repository owner)
+    pgp: >-
+      F6928B0358386997646EA876D78C4471CE776659
+
+    # age recipients:
+    #   - GitHub Actions
+    age: >-
+      age1p3egnn9nqd8uws0n3jfyhlly5h7e0l9q32lrqrcmc2vagv30yy6stl5h4r

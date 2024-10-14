@@ -89,6 +89,10 @@ Those who are not used to referring to Diamond with **it/its** pronouns can
 refer to Diamond with **she/her** pronouns instead. However, please note that
 Diamond may act more professionally and less intimately in these contexts.
 
+### Emergency Contact
+
+{{#encrypted emergency-contacts.md}}
+
 ## Purpose
 
 This guide was created to to help you, the reader, in handling, operating and

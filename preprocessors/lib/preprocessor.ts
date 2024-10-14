@@ -1,5 +1,7 @@
 import * as streams from "jsr:@std/streams";
 
+export const rootDir = new URL("../../", import.meta.url).pathname;
+
 export type Context = {
   root: string;
   config: {
@@ -46,8 +48,12 @@ console.log = console.error;
 
 type stdinData = [Context, Book];
 
+type bookExt = Book & {
+  get chapters(): Chapter[];
+};
+
 export async function preprocess(
-  preprocessor: (context: Context, book: Book) => Promise<void> | void,
+  preprocessor: (context: Context, book: bookExt) => Promise<void> | void,
 ) {
   const stdin = await streams.toText(Deno.stdin.readable);
   if (!stdin) {
@@ -57,7 +63,14 @@ export async function preprocess(
   }
 
   const [context, book] = JSON.parse(stdin) as stdinData;
-  await preprocessor(context, book);
+
+  await preprocessor(context, {
+    ...book,
+    get chapters() {
+      return book.sections.filter(isChapter).map((s) => s.Chapter);
+    },
+  });
+
   console.info(JSON.stringify(book));
 }
 

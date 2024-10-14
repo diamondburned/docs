@@ -1,5 +1,7 @@
+import * as anchor from "#/scripts/anchor.ts";
 import * as namevars from "#/scripts/namevar.ts";
 import * as tocsummary from "#/scripts/toc-summary.ts";
+import * as encryption from "#/scripts/encryption.ts";
 import { forAllElements } from "#/scripts/element.ts";
 
 function respondContentAlert(agree: boolean) {
@@ -17,6 +19,11 @@ function respondContentAlert(agree: boolean) {
 }
 
 function apply() {
+  encryption.apply();
+  namevars.apply();
+  tocsummary.apply();
+  anchor.apply();
+
   forAllElements({
     selector: ".require-javascript",
     apply: (element) => {
@@ -41,9 +48,6 @@ function apply() {
   addEventListener("scroll", () => {
     document.body.classList.toggle("scrolled", globalThis.scrollY > 0);
   });
-
-  namevars.apply();
-  tocsummary.apply();
 }
 
 apply();

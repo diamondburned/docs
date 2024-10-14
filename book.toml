@@ -9,7 +9,7 @@ description = "This user guide is designed to help you understand the basics of 
 [build]
 build-dir = "dist"
 create-missing = false
-extra-watch-dirs = ["scripts", "preprocessors"]
+extra-watch-dirs = ["scripts", "preprocessors", "src/encrypted"]
 use-default-preprocessors = false
 
 [output.html]
@@ -40,6 +40,7 @@ enable = false
 [preprocessor.admonish]
 command = "mdbook-admonish"
 assets_version = "3.0.2" # do not edit: managed by `mdbook-admonish install`
+after = ["encrypt"]
 
 [preprocessor.index]
 
@@ -55,4 +56,7 @@ command = "preprocessors/scripts.ts"
 
 [preprocessor.namevar]
 command = "preprocessors/namevar.ts"
-after = ["toc-summary", "scripts"]
+after = ["toc-summary", "scripts", "encrypt"]
+
+[preprocessor.encrypt]
+command = "preprocessors/encrypt.ts"
