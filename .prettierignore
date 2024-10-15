@@ -1,6 +1,2 @@
-# Covered by Deno
-**/*.ts
-**/*.js
-
 # Encrypted raw files
 src/encrypted
