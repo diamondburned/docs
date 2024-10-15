@@ -38,7 +38,7 @@ enable = false
 [output.markdown]
 
 [output.terminal]
-command = "./renderers/mdbook-terminal.ts"
+command = "renderers/mdbook-terminal.ts"
 base_url = "https://docs.0xd14.id/formats/terminal"
 
 [preprocessor.admonish]

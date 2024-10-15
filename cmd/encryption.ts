@@ -23,12 +23,19 @@ async function main() {
   switch (args._[0]) {
     case "rotate": {
       await rotateKey();
+      console.log("Key rotated.");
+      console.log("Don't forget to update the NFC tags!");
       break;
     }
     case "url": {
       const key = await loadKey();
       const raw = await crypto.subtle.exportKey("raw", key);
-      const url = `https://docs.0xd14.id?key=${encodeBase64(raw)}`;
+
+      const params = new URLSearchParams();
+      params.set("key", encodeBase64(raw));
+      if (args._[1]) params.set("name", args._[1].toString());
+
+      const url = `https://docs.0xd14.id?${params.toString()}`;
       console.log(url, `(${url.length} bytes)`);
       break;
     }
