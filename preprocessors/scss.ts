@@ -1,5 +1,5 @@
 #!/usr/bin/env -S deno run -A
-import { preprocess } from "#/preprocessors/lib/preprocessor.ts";
+import { preprocess } from "#/lib/mdbook-preprocessor.ts";
 
 const stylesDir = new URL("../theme", import.meta.url).pathname;
 const stylesRoot = stylesDir + "/styles.scss";

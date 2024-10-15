@@ -1,26 +1,29 @@
 #!/usr/bin/env -S deno run -A
-import { preprocess, rootDir } from "#/preprocessors/lib/preprocessor.ts";
+import { Context, preprocess } from "#/lib/mdbook-preprocessor.ts";
 import { html } from "jsr:@mark/html@1";
-import { encrypt } from "#/scripts/lib/encryption.ts";
-import { loadKey } from "#/scripts/lib/encryptionkey.ts";
-import { sopsDecrypt } from "#/scripts/lib/sops.ts";
+import { encrypt } from "#/lib/encryption.ts";
+import { loadKey } from "#/lib/encryptionkey.ts";
+import { sopsDecrypt } from "#/lib/sops.ts";
 import { preprocessAllNamevars } from "#/scripts/namevar.ts";
 
 // rusty_markdown uses pulldown-cmark which is exactly what mdBook uses.
 // This parser should be compatible with mdBook.
 import * as markdown from "https://deno.land/x/rusty_markdown@v0.4.1/mod.ts";
-
-const encryptedRe = /{{#encrypted +([^/\0]+)}}/gm;
-const encryptedDir = rootDir + "/src/encrypted";
+import { chapters } from "#/lib/mdbook.ts";
 
 const preprocessors: ((content: string) => string)[] = [
   //
   preprocessAllNamevars,
 ];
 
+const encryptedRe = /{{#encrypted +([^/\0]+)}}/gm;
 const encryptionKey = await loadKey();
 
-async function loadEncryptedContent(name: string): Promise<string> {
+async function loadEncryptedContent(
+  context: Context,
+  name: string,
+): Promise<string> {
+  const encryptedDir = context.root + "/src/encrypted";
   const path = encryptedDir + "/" + name;
 
   // Perform SOPS decryption to convert from version controlled encryption to
@@ -56,9 +59,9 @@ async function loadEncryptedContent(name: string): Promise<string> {
   return content;
 }
 
-await preprocess(async (_, book) => {
+await preprocess(async (context, book) => {
   const names = new Set<string>();
-  for (const chapter of book.chapters) {
+  for (const chapter of chapters(book)) {
     for (const match of chapter.content.matchAll(encryptedRe)) {
       names.add(match[1]);
     }
@@ -66,7 +69,7 @@ await preprocess(async (_, book) => {
 
   const contents = (await Promise.all(
     Array.from(names).map((name) =>
-      loadEncryptedContent(name).then((content) => ({
+      loadEncryptedContent(context, name).then((content) => ({
         name,
         content,
       }))
@@ -76,7 +79,7 @@ await preprocess(async (_, book) => {
     return map;
   }, new Map<string, string>());
 
-  for (const chapter of book.chapters) {
+  for (const chapter of chapters(book)) {
     chapter.content = chapter.content.replaceAll(encryptedRe, (_, key) => {
       return contents.get(key)!;
     });

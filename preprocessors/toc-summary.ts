@@ -1,9 +1,6 @@
 #!/usr/bin/env -S deno run -A
-import {
-  isChapter,
-  preprocess,
-  slugify,
-} from "#/preprocessors/lib/preprocessor.ts";
+import { preprocess } from "#/lib/mdbook-preprocessor.ts";
+import { chapters, slugify } from "#/lib/mdbook.ts";
 
 const scriptsDir = new URL("../scripts", import.meta.url).pathname;
 
@@ -27,12 +24,7 @@ await preprocess(async (context, book) => {
 
   const output: SubsectionsOutput = [];
 
-  for (const section of book.sections) {
-    if (!isChapter(section)) {
-      continue;
-    }
-
-    const chapter = section.Chapter;
+  for (const chapter of chapters(book)) {
     const processedSection: Section = {
       name: chapter.name,
       link: "/" + chapter.path.replace("src/", "").replace(".md", ".html"),

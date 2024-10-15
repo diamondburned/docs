@@ -1,9 +1,5 @@
 #!/usr/bin/env -S deno run -A
-import {
-  decodeBase64,
-  decrypt,
-  keyFingerprint,
-} from "#/scripts/lib/encryption.ts";
+import { decodeBase64, decrypt, keyFingerprint } from "#/lib/encryption.ts";
 import { html } from "jsr:@mark/html@1";
 import * as anchor from "#/scripts/anchor.ts";
 import * as namevars from "#/scripts/namevar.ts";

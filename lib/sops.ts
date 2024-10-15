@@ -1,3 +1,5 @@
+import { assertSuccess } from "#/lib/cmd.ts";
+
 // sopsDecrypt decrypts a file encrypted with SOPS and returns the plaintext.
 // If the file is not encrypted, it is returned as is.
 export async function sopsDecrypt(
@@ -83,11 +85,5 @@ export async function sopsIsEncrypted(path: string): Promise<boolean> {
     return res.encrypted;
   } catch (e) {
     throw new Error(`Failed to check if file is encrypted`, { cause: e });
-  }
-}
-
-function assertSuccess(cmd: Deno.CommandStatus) {
-  if (!cmd.success) {
-    throw new Error(`Command failed with code ${cmd.code}`);
   }
 }

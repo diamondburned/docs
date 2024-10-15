@@ -17,7 +17,6 @@ export async function generateKey(): Promise<CryptoKey> {
 // The result is an HTML element that can be parsed by the caller.
 export async function encrypt(key: CryptoKey, data: string): Promise<string> {
   const fp = await keyFingerprint(key);
-  // const iv = crypto.getRandomValues(new Uint8Array(12));
   const iv = await getIV(data);
 
   const encrypted = await crypto.subtle.encrypt(
@@ -30,9 +29,7 @@ export async function encrypt(key: CryptoKey, data: string): Promise<string> {
   const encryptedStr = encodeBase64(encrypted);
 
   return html`
-    <div>
-      <html-encrypted fp="${fp}" iv="${ivStr}" data="${encryptedStr}" />
-    </div>
+    <div><html-encrypted fp="${fp}" iv="${ivStr}" data="${encryptedStr}" /></div>
   `().trim();
 }
 

@@ -1,17 +1,17 @@
-import { rootDir } from "#/preprocessors/lib/preprocessor.ts";
-import { generateKey } from "#/scripts/lib/encryption.ts";
-import { sopsDecrypt, sopsEncryptTo } from "#/scripts/lib/sops.ts";
+import { generateKey } from "#/lib/encryption.ts";
+import { sopsDecrypt, sopsEncryptTo } from "#/lib/sops.ts";
 
-const KEY_PATH = `${rootDir}/src/encrypted/encryption-key.json`;
+const keyPath =
+  new URL("../src/encrypted/encryption-key.json", import.meta.url).pathname;
 
 export async function saveKey(key: CryptoKey) {
   const raw = await crypto.subtle.exportKey("jwk", key);
   const json = JSON.stringify(raw);
-  await sopsEncryptTo(KEY_PATH, json);
+  await sopsEncryptTo(keyPath, json);
 }
 
 export async function loadKey(): Promise<CryptoKey> {
-  const json = await sopsDecrypt(KEY_PATH);
+  const json = await sopsDecrypt(keyPath);
   const raw = JSON.parse(json);
   const key = await crypto.subtle.importKey("jwk", raw, "AES-GCM", true, [
     "encrypt",

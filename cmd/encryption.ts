@@ -1,7 +1,7 @@
 #!/usr/bin/env -S deno run -A
 import { parseArgs } from "jsr:@std/cli@1.0.6/parse-args";
-import { encodeBase64 } from "#/scripts/lib/encryption.ts";
-import { loadKey, rotateKey } from "#/scripts/lib/encryptionkey.ts";
+import { encodeBase64 } from "#/lib/encryption.ts";
+import { loadKey, rotateKey } from "#/lib/encryptionkey.ts";
 
 function usage() {
   console.log(

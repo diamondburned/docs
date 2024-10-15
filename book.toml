@@ -9,7 +9,7 @@ description = "This user guide is designed to help you understand the basics of 
 [build]
 build-dir = "dist"
 create-missing = false
-extra-watch-dirs = ["scripts", "preprocessors", "src/encrypted"]
+extra-watch-dirs = ["scripts", "preprocessors"]
 use-default-preprocessors = false
 
 [output.html]
@@ -36,6 +36,10 @@ enable = false
 enable = false
 
 [output.markdown]
+
+[output.terminal]
+command = "./renderers/mdbook-terminal.ts"
+base_url = "https://docs.0xd14.id/formats/terminal"
 
 [preprocessor.admonish]
 command = "mdbook-admonish"

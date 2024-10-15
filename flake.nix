@@ -20,50 +20,31 @@
       system:
       let
         lib = pkgs.lib;
-        pkgs = import nixpkgs { inherit system; };
-        name = "diamond-user-guide";
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+      {
+        devShells.default = pkgs.mkShell {
+          name = "diamondburned-docs";
 
-        buildInputs = with pkgs; [
-          bash
-          age
-          sops
-          deno
-          dart-sass
-          esbuild
-          mdbook
-          mdbook-admonish
-        ];
+          packages = with pkgs; [
+            age
+            sops
+            just
+            deno
+            dart-sass
+            esbuild
+            mdbook
+            mdbook-admonish
+            lowdown
 
-        extraAttrs = {
+            nixfmt-rfc-style
+            nodePackages.prettier
+            languagetool
+          ];
+
           ESBUILD_BINARY_PATH = lib.getExe pkgs.esbuild;
           DENO_NO_UPDATE_CHECK = "1";
         };
-      in
-      {
-        devShells.default = pkgs.mkShell (
-          {
-            inherit name buildInputs;
-            packages = with pkgs; [
-              self.formatter.${system}
-              nodePackages.prettier
-              languagetool
-            ];
-          }
-          // extraAttrs
-        );
-
-        packages = import ./nix/packages.nix {
-          inherit
-            self
-            pkgs
-            name
-            inputs
-            buildInputs
-            extraAttrs
-            ;
-        };
-
-        formatter = pkgs.nixfmt-rfc-style;
       }
     );
 }
