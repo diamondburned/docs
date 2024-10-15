@@ -22,7 +22,7 @@ jobs:
           SOPS_AGE_KEY: ${{ secrets.SOPS_AGE_KEY }}
 
       - name: Build
-        run: nix build .#html
+        run: nix build -L .#html
 
       - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v3
