@@ -1,4 +1,3 @@
-#!/usr/bin/env -S deno run -A
 import { decodeBase64, decrypt, keyFingerprint } from "#/lib/encryption.ts";
 import { html } from "jsr:@mark/html@1";
 import * as anchor from "#/scripts/anchor.ts";
@@ -7,7 +6,7 @@ import * as namevars from "#/scripts/namevar.ts";
 const encryptedNotification = html`
   <p class="encrypted-notification">
     This content is encrypted. More information can be found under
-    <a href="/sections/nfc-chipping.html">NFC Chipping</a>.
+    <a href="/sections/tagging-and-encryption.html">Tagging and Encryption</a>.
   </p>
 `;
 
@@ -19,8 +18,10 @@ const incorrectKeyNotification = html`
     <div>
       <p>
         You may have provided an incorrect decryption key or the content has
-        been tampered with. You may try to obtain the correct key by
-        <a href="/sections/nfc-chipping.html">scanning Diamond's NFC tag</a>.
+        been tampered with. More information can be found under
+        <a href="/sections/tagging-and-encryption.html"
+          >Tagging and Encryption</a
+        >.
       </p>
     </div>
   </div>
