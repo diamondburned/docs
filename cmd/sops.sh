@@ -2,24 +2,18 @@
 
 main() {
 	case "$1" in
-	rotate)
-		forEachFile sops rotate --in-place
+	"rotate"|"encrypt"|"decrypt")
+		forEachFile sops "$1" --in-place
 		;;
-	decrypt-all)
-		forEachFile sops decrypt --in-place
-		;;
-	encrypt-all)
-		forEachFile sops encrypt --in-place
+	"updatekeys")
+		forEachFile sops updatekeys -y
 		;;
 	*)
 		cat<<-EOF
 		Usage:
-		  $0 <command>
-
-		Commands:
-		  rotate        Rotate all keys in the encrypted files
-		  decrypt-all   Decrypt all files in the encrypted directory
-		  encrypt-all   Encrypt all files in the encrypted directory
+		  $0 <rotate|encrypt|decrypt|updatekeys>
+		See also:
+		  sops --help
 		EOF
 		;;
 	esac

@@ -1,5 +1,5 @@
 creation_rules:
-  - path_regex: .*
+  - path_regex: .
 
     # gpg recipients:
     #   - diamondburned (repository owner)
