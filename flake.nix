@@ -25,6 +25,8 @@
 
         buildInputs = with pkgs; [
           bash
+          age
+          sops
           deno
           dart-sass
           esbuild
@@ -45,8 +47,6 @@
               self.formatter.${system}
               nodePackages.prettier
               languagetool
-              age
-              sops
             ];
           }
           // extraAttrs

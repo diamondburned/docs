@@ -1,4 +1,4 @@
-import { assert } from "jsr:@std/assert@0.223.0";
+import { assert } from "jsr:@std/assert@0";
 import { forAllElements, html, isElement } from "#/scripts/element.ts";
 
 export type Namevar = {
@@ -36,7 +36,7 @@ export const namevars: Namevar[] = [
     options: ["Diamond", "d14", "0xd14"],
     preprocessMatcher: /\\?Diamond|\[Diamond\]/g,
     preprocess: (match) =>
-      match.startsWith("\\")
+      match.startsWith("\\") // keep format
         ? () => match.slice(1)
         : html`
             <span class="namevar" data-namevar="identifier">Diamond</span>
@@ -327,8 +327,9 @@ export function apply(parent?: Element) {
 }
 
 export function preprocessNamevar(namevar: Namevar, content: string): string {
-  return content.replace(namevar.preprocessMatcher, (match) =>
-    namevar.preprocess(match)().trim(),
+  return content.replace(
+    namevar.preprocessMatcher,
+    (match) => namevar.preprocess(match)().trim(),
   );
 }
 

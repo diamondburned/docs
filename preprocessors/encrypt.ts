@@ -1,17 +1,14 @@
 #!/usr/bin/env -S deno run -A
-import {
-  chapters,
-  preprocess,
-  rootDir,
-} from "#/preprocessors/lib/preprocessor.ts";
+import { preprocess, rootDir } from "#/preprocessors/lib/preprocessor.ts";
 import { html } from "jsr:@mark/html@1";
 import { encrypt } from "#/scripts/lib/encryption.ts";
 import { loadKey } from "#/scripts/lib/encryptionkey.ts";
 import { sopsDecrypt } from "#/scripts/lib/sops.ts";
 import { preprocessAllNamevars } from "#/scripts/namevar.ts";
 
-// @ts-types="https://cdn.jsdelivr.net/npm/@types/commonmark@0.27.9/index.d.ts"
-import * as commonmark from "https://cdn.jsdelivr.net/npm/commonmark@0.31.2/+esm";
+// rusty_markdown uses pulldown-cmark which is exactly what mdBook uses.
+// This parser should be compatible with mdBook.
+import * as markdown from "https://deno.land/x/rusty_markdown@v0.4.1/mod.ts";
 
 const encryptedRe = /{{#encrypted +([^/\0]+)}}/gm;
 const encryptedDir = rootDir + "/src/encrypted";
@@ -21,10 +18,7 @@ const preprocessors: ((content: string) => string)[] = [
   preprocessAllNamevars,
 ];
 
-const mdParser = new commonmark.Parser();
-const mdRenderer = new commonmark.HtmlRenderer();
-
-const key = await loadKey();
+const encryptionKey = await loadKey();
 
 async function loadEncryptedContent(name: string): Promise<string> {
   const path = encryptedDir + "/" + name;
@@ -48,7 +42,7 @@ async function loadEncryptedContent(name: string): Promise<string> {
       for (const f of preprocessors) {
         content = f(content);
       }
-      content = mdRenderer.render(mdParser.parse(content));
+      content = markdown.html(markdown.tokens(content));
       break;
     }
     default: {
@@ -58,7 +52,7 @@ async function loadEncryptedContent(name: string): Promise<string> {
 
   // Re-encrypt the content, this time for rendering instead of for version
   // control.
-  content = await encrypt(key, content);
+  content = await encrypt(encryptionKey, content);
   return content;
 }
 
