@@ -28,7 +28,14 @@ async function loadEncryptedContent(
 
   // Perform SOPS decryption to convert from version controlled encryption to
   // plain text.
-  let content = await sopsDecrypt(path);
+  let content = await sopsDecrypt(path).catch((e) => {
+    console.warn(`Failed to decrypt ${path}:`, e);
+    return html`
+      <div class="admonish-error">
+        <b>SOPS error:</b> content unable to be decrypted.
+      </div>
+    `();
+  });
 
   const [_, ext] = name.split(".");
   switch (ext) {
@@ -67,14 +74,16 @@ await preprocess(async (context, book) => {
     }
   }
 
-  const contents = (await Promise.all(
-    Array.from(names).map((name) =>
-      loadEncryptedContent(context, name).then((content) => ({
-        name,
-        content,
-      }))
-    ),
-  )).reduce((map, { name, content }) => {
+  const contents = (
+    await Promise.all(
+      Array.from(names).map((name) =>
+        loadEncryptedContent(context, name).then((content) => ({
+          name,
+          content,
+        })),
+      ),
+    )
+  ).reduce((map, { name, content }) => {
     map.set(name, content);
     return map;
   }, new Map<string, string>());
