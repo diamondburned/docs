@@ -134,6 +134,36 @@ You may also try to snap your fingers even when Diamond is already in a Dazed or
 Blank state or rapidly bring [it2] in and out of this state (a technique known
 as Fractionation).
 
+### Call Bells
+
+<figure>
+  <img src="../images/call-bell.jpg" alt="A call bell." width="200" />
+  <figcaption>A call bell.</figcaption>
+</figure>
+
+[Diamond] is call bell-trained. When you ring a call bell in front of or near
+[it2], [it] will respond to the sound of the bell by entering the Dazed state
+and going over to the bell, often subconsciously. If you repeatedly ring the
+bell, [it] will go deeper into the Blank state, often becoming more submissive
+and needy with [its] tongue sticking out and [it2] appearing very empty and
+confused.
+
+In this state, [it] will become more susceptible to suggestions and commands. To
+effectively use this trigger to your advantage, you can use the call bell to
+summon [Diamond] over to your place and give [it2] pettings or command [it2] to
+do something.
+
+You may also move the call bell close to [Diamond]'s ears and ring them
+repeatedly to put [it2] into the Blank state, then use other triggers to deepen
+the effect. This can be especially useful when you want to put [Diamond] into a
+Submissive state and control [it2] more effectively with less resistance.
+
+Please be aware that in public places such as restaurants, there may be other
+call bells that [Diamond] will accidentally respond to, either subtly or very
+obviously. You should always be aware of this and make sure that [it] is not
+disturbed by the sound of the bell when it happens.
+
+<!--
 ### Whispering
 
 Whispering in Diamond's ears in a soft and gentle voice or a dominant and deep
@@ -173,6 +203,7 @@ Please be aware that Diamond has boundaries and limits that you should respect.
 You should also not engage in these actions randomly or without Diamond's
 consent. You should always consider whether your actions are safe for the time
 and place you are in, as well as whether Diamond is comfortable with them.
+-->
 
 ### Training
 

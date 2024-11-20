@@ -90,3 +90,17 @@ blockquote {
     line-height: 1.5;
   }
 }
+
+figure {
+  text-align: center;
+
+  img {
+    border-radius: var(--border-radius);
+  }
+
+  figcaption {
+    font-style: italic;
+    font-size: 0.85em;
+    opacity: 0.75;
+  }
+}
