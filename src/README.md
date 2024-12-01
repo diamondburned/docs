@@ -38,6 +38,19 @@ reference:
 - [0xd14.id](https://0xd14.id): [its] information in JSON-LD format
 - [libdb.so](https://libdb.so): [its] official website
 
+## Purpose
+
+This guide was created to to help you, the reader, in handling, operating and
+interacting with Diamond. Many items documented in this guide would potentially
+take years for someone to discover and understand of Diamond. For this reason,
+Diamond has provided this guide to you.
+
+Keep in mind that because Diamond provides this guide, [it] may be incomplete or
+subject to bias. Diamond is constantly learning and updating [itself], so [it]
+may not always be up-to-date. Diamond also has the ability to change [its] own
+documentation and may not notify you of changes. Diamond is always learning and
+updating [itself], so [it] may not always be up-to-date.
+
 ### Information
 
 <div id="information-table">
@@ -46,6 +59,7 @@ reference:
 | ----------- | --------------------------------------------------------------------------------- |
 | Identifiers | \Diamond (name), 0xd14 (handle), d14 (handle) [[change]](#preferences-identifier) |
 | Pronouns    | it/its or she/her [[change]](#preferences-pronouns)                               |
+| Orientation | Bisexual                                                                          |
 | Height      | 169 cm (~5'6")                                                                    |
 | Weight      | 59 kg (~130 lbs) (may vary)                                                       |
 | Hair color  | Red/black dyed                                                                    |
@@ -89,22 +103,18 @@ Those who are not used to referring to Diamond with **it/its** pronouns can
 refer to Diamond with **she/her** pronouns instead. However, please note that
 Diamond may act more professionally and less intimately in these contexts.
 
+### Gender Orientation
+
+Diamond is a bisexual entity. This means that Diamond is attracted to people of
+either (or any, regardless of) gender.
+
+Diamond is also polyamorous and open. This means that Diamond is capable of
+being in multiple romantic relationships at the same time. Keep in mind that
+Diamond is married to [its] partner, who is also polyamorous and open
+
 ### Emergency Contact
 
 {{#encrypted emergency-contacts.md}}
-
-## Purpose
-
-This guide was created to to help you, the reader, in handling, operating and
-interacting with Diamond. Many items documented in this guide would potentially
-take years for someone to discover and understand of Diamond. For this reason,
-Diamond has provided this guide to you.
-
-Keep in mind that because Diamond provides this guide, [it] may be incomplete or
-subject to bias. Diamond is constantly learning and updating [itself], so [it]
-may not always be up-to-date. Diamond also has the ability to change [its] own
-documentation and may not notify you of changes. Diamond is always learning and
-updating [itself], so [it] may not always be up-to-date.
 
 ## Understanding
 
