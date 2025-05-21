@@ -93,15 +93,18 @@ Diamond cope with [its] dissociation.
 #### she/her
 
 Diamond will sometimes go by **she/her** pronouns. This is usually when Diamond
-is feeling more feminine, womanly, or girly. For example, you can say "Diamond
+is feeling more feminine than object-like, or when it needs to be professional.
+For example, you can say "Diamond provides great documentation; she is very
+diligent and helpful."
 
 Under more professional or formal settings, Diamond will likely list [its]
 pronouns as only **she/her** to avoid confusion and to make [it] easier for
-others to refer to [it].
+other people who aren't as familiar to refer to [it].
 
 Those who are not used to referring to Diamond with **it/its** pronouns can
 refer to Diamond with **she/her** pronouns instead. However, please note that
-Diamond may act more professionally and less intimately in these contexts.
+Diamond may act more professionally and distant in these contexts to maintain
+boundaries.
 
 ### Gender Orientation
 

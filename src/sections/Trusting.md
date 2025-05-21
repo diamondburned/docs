@@ -46,8 +46,8 @@ categories are as follows:
   - Diamond may have had negative experiences with family members in the past.
     These experiences may have caused [it2] to be more cautious around family
     members.
-  - Diamond does not wish to remain in contact with most of [its2] family
-    members or relatives. Please do not ask about them.
+  - Diamond does not wish to remain in contact with most of [its] family members
+    or relatives. Please do not ask about them.
 - **Friend**: Diamond is very open around friends. [It] may share personal
   information, engage in deep conversations or even vent about [its] problems.
   [It] may also be more willing to help friends with their problems.
