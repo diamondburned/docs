@@ -63,7 +63,7 @@ updating [itself], so [it] may not always be up-to-date.
 | Height      | 169 cm (~5'6")                                                                    |
 | Weight      | 59 kg (~130 lbs) (may vary)                                                       |
 | Hair color  | Red/black dyed                                                                    |
-| Bust size   | 32A (may vary)                                                                    |
+| Bust size   | 35C (may vary)                                                                    |
 | Waist size  | 27" (may vary)                                                                    |
 | Hip size    | 37" (may vary)                                                                    |
 
