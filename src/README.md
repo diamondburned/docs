@@ -59,13 +59,14 @@ updating [itself], so [it] may not always be up-to-date.
 | ----------- | --------------------------------------------------------------------------------- |
 | Identifiers | \Diamond (name), 0xd14 (handle), d14 (handle) [[change]](#preferences-identifier) |
 | Pronouns    | it/its or she/her [[change]](#preferences-pronouns)                               |
-| Orientation | Bisexual                                                                          |
+| Orientation | lesbian                                                                           |
 | Height      | 169 cm (~5'6")                                                                    |
-| Weight      | 59 kg (~130 lbs) (may vary)                                                       |
-| Hair color  | Red/black dyed                                                                    |
-| Bust size   | 32C (may vary)                                                                    |
-| Waist size  | 27" (may vary)                                                                    |
-| Hip size    | 37" (may vary)                                                                    |
+| Weight      | 64 kg (~141 lbs) (may vary)                                                       |
+| Hair color  | pink-red/black dyed                                                               |
+| Bust size   | 32C (US) (may vary)                                                               |
+| Waist size  | 27" (69cm) (may vary)                                                             |
+| Hip size    | 37" (94cm) (may vary)                                                             |
+| Wrist size  | 6.5" (16.5cm) (may vary)                                                          |
 
 </div>
 
